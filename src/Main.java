@@ -1,11 +1,5 @@
-import easy.DeleteDuplicates_83;
-import linkedlist.TwoPointer;
-import middle.*;
-import struct.ListNode;
+import leetcode.middle.*;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
 import java.util.UUID;
 
 public class Main {
