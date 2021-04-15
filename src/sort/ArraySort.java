@@ -11,7 +11,7 @@ public class ArraySort {
     }
 
 
-    //region head sort region
+    //region heap sort region
     public static void heapSort(int[] array) {
         int length = array.length;
         buildHeap(array,length);
