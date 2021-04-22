@@ -44,7 +44,49 @@ public class NumDecodings_91 {
     }
 
     public static boolean inRange(String s){
-        Integer integer = Integer.valueOf(s);
+        if(s.startsWith("0"))
+            return false;
+        int integer = Integer.parseInt(s);
         return integer<=26 && integer>=1;
     }
+
+    public static boolean inRange(char s){
+        if('0'==s)
+            return false;
+        return  s <='9' &&  s >='1';
+    }
+
+    public static int numDecodings_new(String s){
+        int length = s.length();
+        int[] dp=new int[length+1];
+        dp[0]=1;
+        if(inRange(s.charAt(0))){
+            dp[1]=1;
+        }
+        for (int i = 1; i < length; i++) {
+            if(s.charAt(i)!='0'){
+                dp[i+1]+=dp[i];
+            }
+            if(inRange(s.substring(i-1,i+1))){
+                dp[i+1]+=dp[i-1];
+            }
+        }
+        return dp[length];
+    }
+
+    public static int numDecodings_new_new(String s){
+        int length = s.length();
+        int[] dp=new int[length+1];
+        dp[0]=1;
+        for (int i = 0; i < length; i++) {
+            if(s.charAt(i)!='0'){
+                dp[i+1]+=dp[i];
+            }
+            if(i>=1 && s.charAt(i-1)!='0' && ((s.charAt(i-1)-'0')*10+(s.charAt(i)-'0')<=26)){
+                dp[i+1]+=dp[i-1];
+            }
+        }
+        return dp[length];
+    }
+
 }

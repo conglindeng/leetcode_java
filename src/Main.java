@@ -17,7 +17,7 @@ public class Main {
         list.add("3");
         list.stream().forEach(s -> System.out.println(s));
 
-        NumDecodings_91.numDecodings("1201234");
+        NumDecodings_91.numDecodings_new_new("1201234");
 
         System.out.println();
     }
