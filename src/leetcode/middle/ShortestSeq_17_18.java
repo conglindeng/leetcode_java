@@ -68,20 +68,47 @@ public class ShortestSeq_17_18 {
     }
 
 
+
+    // todo : not completed
     public int[] shortestSeq_new(int[] big, int[] small) {
         int diff = 0;
         int length = big.length;
-        if (small.length > length) {
+        int length1 = small.length;
+        if (length1 > length) {
             return new int[0];
         }
         Map<Integer, Integer> countMap = new HashMap<>();
         for (int i : small) {
-            countMap.put(i, 1);
+            countMap.put(i, 0);
             diff++;
         }
-        int l = 0, r = 0;
-
-
-        return new int[0];
+        int left = 0, right = 0;
+        int[] result=new int[2];
+        result[1]=Integer.MAX_VALUE;
+        boolean flag=false;
+        while(right<length){
+            Integer integer = countMap.get(big[right]);
+            if(integer!=null){
+                diff--;
+                countMap.put(big[right],integer+1);
+            }
+            while(diff==0 && left<right){
+                flag=true;
+                Integer count = countMap.get(big[left]);
+                if(count!=null){
+                    countMap.put(big[right],count-1);
+                    if(count==1){
+                        if((result[1]-result[0])>(right-left)){
+                            result[1]=right;
+                            result[0]=left;
+                        }
+                        diff++;
+                    }
+                }
+                left++;
+            }
+            right++;
+        }
+        return flag? result : new int[0];
     }
 }
