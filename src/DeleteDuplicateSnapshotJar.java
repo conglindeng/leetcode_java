@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DeleteDuplicateSnapshotJar {
-    static String libPath = "G:\\master\\80_数字法院\\np-fy-laxt\\java\\target\\laxt\\WEB-INF\\lib";
+    static String libPath = "G:\\git\\40_source\\80_数字法院\\np-fy-dwjk\\java\\target\\dwjk\\WEB-INF\\lib";
     // static String libPath = "D:\\workspace\\HYPROJ3\\40_source\\80_数字法院\\np-fy-ajcx\\java\\target\\ajcx\\WEB-INF\\lib";
     // static String libPath = "D:\\workspace\\HYPROJ2\\40_source\\80_数字法院\\np-fy-spxt\\java\\target\\laxt\\WEB-INF\\lib";
 //    static String libPath = "D:\\workspace\\HYPROJ2\\40_source\\80_数字法院\\np-fy-xtgl\\java\\target\\xtgl\\WEB-INF\\lib";
@@ -31,7 +31,7 @@ public class DeleteDuplicateSnapshotJar {
             for (File jar:jars){
                 for(String snapshot:snapshots){
                     boolean condition1 = jar.getName().startsWith(snapshot.substring(0,snapshot.length()-12)) && !jar.getName().endsWith(snapshot);
-                    boolean condition2 = jar.getName().contains("3.13");
+                    boolean condition2 = jar.getName().contains("-3.13-");
                     if(condition1 || condition2){
                         if(!jar.delete()){
                             System.out.println(jar.getName()+"-----失败");
