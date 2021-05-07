@@ -1,8 +1,10 @@
 
 import algorithm.DeleteDuplicateNum;
+import algorithm.FindAdditions;
 import algorithm.FindMaxKNums;
 import algorithm.MaxSubarraySum;
 import algorithm.slidingwindow.MaxSum;
+import leetcode.easy.XorOperation_1486;
 import leetcode.middle.*;
 import sort.ArraySort;
 
@@ -20,7 +22,9 @@ public class Main {
         test.put("1","1");
         test.put("2","2");
         test.put("3","3");
-        System.out.println(new MaxSubarraySum().MaxSubarraySum(new int[]{1, 4, -5, 9, 8, 3, -6}));
+
+
+        new XorOperation_1486().xorOperation(5,0);
 
     }
 }

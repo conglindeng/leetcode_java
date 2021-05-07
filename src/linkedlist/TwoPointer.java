@@ -117,4 +117,17 @@ public class TwoPointer {
     }
 
 
+    public static ListNode mergeTwoLinkedList(ListNode first,ListNode second){
+
+        ListNode curFirst=first;
+        ListNode curSecond=second;
+        while(curFirst!=null&&curSecond!=null){
+
+
+
+        }
+
+        return null;
+    }
+
 }
