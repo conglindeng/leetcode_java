@@ -24,7 +24,7 @@ public class Main {
         test.put("3","3");
 
 
-        new XorOperation_1486().xorOperation(5,0);
+        ArraySort.fastSort(new int[]{ 47,29,71,99,78,19,24,47 });
 
     }
 }

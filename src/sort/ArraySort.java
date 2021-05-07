@@ -22,6 +22,7 @@ public class ArraySort {
 
 
     //region heap sort region
+    // todo : complete the algorithm
     public static void heapSort(int[] array) {
         int length = array.length;
         buildHeap(array,length);
@@ -38,7 +39,7 @@ public class ArraySort {
 
     }
 
-    private static void swap(int[] array, int i , int j) {
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
@@ -46,4 +47,38 @@ public class ArraySort {
 
 
     //endregion
+
+
+    public static void fastSort(int[] array) {
+        doFastSort(array, 0, array.length - 1);
+    }
+
+    private static void doFastSort(int[] array, int begin, int end) {
+        if(begin>=end){
+            return;
+        }
+        int base = array[begin];
+        int left = begin;
+        int right = end;
+        while (left < right) {
+            while (base < array[right] && left < right) {
+                right--;
+            }
+            if (left < right) {
+                array[left]=array[right];
+                left++;
+            }
+            while(base>array[left]&&left<right){
+                left++;
+            }
+            if(left<right){
+                array[right]=array[left];
+                right--;
+            }
+        }
+        array[left]=base;
+        doFastSort(array, begin, left-1);
+        doFastSort(array, left+1, end);
+    }
+
 }
