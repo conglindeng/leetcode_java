@@ -55,4 +55,22 @@ public class LevelOrder {
         return result;
     }
 
+    public int height;
+
+    public int getHeight(TreeNode root,int val){
+        height=-1;
+        dfs(root,0,val);
+        return height;
+    }
+
+
+    private void dfs(TreeNode root,int curLevel,int val){
+        if(root.val==val)
+            height= curLevel;
+        if(root.left!=null)
+            dfs(root.left,curLevel+1,val);
+        if(root.right!=null)
+            dfs(root.right,curLevel+1,val);
+    }
+
 }

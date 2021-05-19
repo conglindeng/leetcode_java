@@ -17,34 +17,19 @@ public class Main {
     static long[][] arr;
 
     public static void main(String[] args) {
+        new IntToRoman_12().intToRoman(1994);
 
-        String str="'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095'," +
-                "'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095'," +
-                "'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095'," +
-                "'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095'," +
-                "'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095'," +
-                "'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095'," +
-                "'2c9040af4fd9bf36014fd9dca4970095','2c9040af4fd9bf36014fd9dca4970095','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d'," +
-                "'2c99905f7456e81401746b6e369c0076','2c9040af4fcec089014fcfdafb28035d','2c99905f7456e81401746b6e369c0076'," +
-                "'0d8183fa79070317017907623e9608bc','0d8183fa79070317017907623e9608bc','0d8183fa79070317017907623e9608bc'," +
-                "'0d8183fa79070317017907623e9608bc'";
-        String[] split = StringUtils.split(str, ",");
-        Set<String> set=new TreeSet<>();
-        for(String s: split){
-            set.add(s.trim());
-        }
-        System.out.println(set);
+
+        LinkedHashMap<String,String> cache=new LinkedHashMap<String,String>(3){
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
+                return size()>=2;
+            }
+        };
+
+        cache.put("1","1");
+        cache.put("2","2");
+        cache.put("3","3");
+        cache.put("4","4");
     }
 }

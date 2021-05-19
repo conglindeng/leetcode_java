@@ -1,4 +1,6 @@
+import leetcode.easy.IsCousins_993;
 import struct.TreeNode;
+import tree.LevelOrder;
 import tree.Traverse;
 
 public class TreeNodeMain {
@@ -14,12 +16,12 @@ public class TreeNodeMain {
         treeNode1.left=treeNode2;
         treeNode1.right=treeNode3;
         treeNode2.left=treeNode4;
-        treeNode2.right=treeNode5;
-        treeNode3.left=treeNode6;
-        treeNode3.right=treeNode7;
-        treeNode4.left=treeNode8;
+        //treeNode2.right=treeNode5;
+//        treeNode3.left=treeNode6;
+//        treeNode3.right=treeNode7;
+//        treeNode4.left=treeNode8;
 
-        System.out.println(Traverse.LDRTraverse(treeNode1));
+        System.out.println(new LevelOrder().getHeight(treeNode1,3));
 
 
     }

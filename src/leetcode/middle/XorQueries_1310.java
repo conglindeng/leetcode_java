@@ -23,7 +23,7 @@ public class XorQueries_1310 {
             prefixXOR[i+1]=prefixXOR[i]^arr[i];
         }
         for (int i = 0; i < queries.length; i++) {
-            int[] query = queries[i];
+/*            int[] query = queries[i];
             int begin = query[0];
             int end = query[1];
             int item=prefixXOR[end+1];
@@ -31,6 +31,11 @@ public class XorQueries_1310 {
                 item^=arr[j];
             }
             result[i]=item;
+
+            why it is true?
+
+            */
+            result[i]=prefixXOR[queries[i][1]+1]^prefixXOR[queries[i][0]];
         }
         return result;
     }
