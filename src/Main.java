@@ -20,16 +20,11 @@ public class Main {
         new IntToRoman_12().intToRoman(1994);
 
 
-        LinkedHashMap<String,String> cache=new LinkedHashMap<String,String>(3){
-            @Override
-            protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
-                return size()>=2;
-            }
-        };
+        LRUCache_146 cache = new LRUCache_146(2);
 
-        cache.put("1","1");
-        cache.put("2","2");
-        cache.put("3","3");
-        cache.put("4","4");
+        cache.put(1,1);
+        cache.put(2,2);
+        cache.put(3,3);
+        cache.put(4,4);
     }
 }
