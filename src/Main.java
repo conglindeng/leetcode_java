@@ -19,12 +19,13 @@ public class Main {
     public static void main(String[] args) {
         new IntToRoman_12().intToRoman(1994);
 
+        System.out.println(new StepToStairs().getCount(50));
 
-        LRUCache_146 cache = new LRUCache_146(2);
-
-        cache.put(1,1);
-        cache.put(2,2);
-        cache.put(3,3);
-        cache.put(4,4);
+/*        LRUCache_146_Optimize lRUCache = new LRUCache_146_Optimize(1);
+        lRUCache.put(1, 1);
+        lRUCache.get(1);
+        lRUCache.put(2, 2);
+        lRUCache.get(1);
+        lRUCache.get(2);*/
     }
 }

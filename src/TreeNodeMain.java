@@ -1,3 +1,4 @@
+import algorithm.tree.GetHeight;
 import leetcode.easy.IsCousins_993;
 import struct.TreeNode;
 import tree.LevelOrder;
@@ -14,14 +15,16 @@ public class TreeNodeMain {
         TreeNode treeNode7=new TreeNode(7);
         TreeNode treeNode8=new TreeNode(8);
         treeNode1.left=treeNode2;
-        treeNode1.right=treeNode3;
-        treeNode2.left=treeNode4;
+        treeNode2.left=treeNode3;
+        treeNode3.left=treeNode5;
+        treeNode5.right=treeNode6;
+        treeNode1.right=treeNode4;
         //treeNode2.right=treeNode5;
 //        treeNode3.left=treeNode6;
 //        treeNode3.right=treeNode7;
 //        treeNode4.left=treeNode8;
 
-        System.out.println(new LevelOrder().getHeight(treeNode1,3));
+        System.out.println(new GetHeight().getHeight_Recursive(treeNode1));
 
 
     }
