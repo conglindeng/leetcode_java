@@ -1,6 +1,7 @@
 
 import algorithm.*;
 import algorithm.slidingwindow.MaxSum;
+import array.MergeTwoArray;
 import leetcode.easy.XorOperation_1486;
 import leetcode.middle.*;
 import net.sf.cglib.core.CollectionUtils;
@@ -17,9 +18,8 @@ public class Main {
     static long[][] arr;
 
     public static void main(String[] args) {
-        new IntToRoman_12().intToRoman(1994);
 
-        System.out.println(new StepToStairs().getCount(50));
+       // MergeTwoArray.mergeTwoArray(new int[]{1,2,3,4,6,7},new int[]{2,4},false);
 
 /*        LRUCache_146_Optimize lRUCache = new LRUCache_146_Optimize(1);
         lRUCache.put(1, 1);
@@ -27,5 +27,8 @@ public class Main {
         lRUCache.put(2, 2);
         lRUCache.get(1);
         lRUCache.get(2);*/
+
+        Map<Integer,Integer> test=new HashMap<>();
+        test.put(null,null);
     }
 }

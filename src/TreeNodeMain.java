@@ -1,8 +1,5 @@
-import algorithm.tree.GetHeight;
-import leetcode.easy.IsCousins_993;
+import tree.GetHeight;
 import struct.TreeNode;
-import tree.LevelOrder;
-import tree.Traverse;
 
 public class TreeNodeMain {
     public static void main(String[] args) {

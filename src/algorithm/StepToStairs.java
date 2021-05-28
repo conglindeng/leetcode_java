@@ -1,7 +1,12 @@
 package algorithm;
 
 public class StepToStairs {
-    int count;
+
+    /**
+     * 走楼梯，每一次只能走1步或者2步，计算走n步所有不同的走法数量
+     * @param n
+     * @return
+     */
     public int getCount(int n){
         if(n==1){
             return 1;
