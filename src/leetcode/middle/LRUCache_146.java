@@ -29,7 +29,6 @@ public class  LRUCache_146 extends LinkedHashMap<Integer,Integer> {
 }
 
 /*
- 此has-a(静态内部类)效率高于上一继承linkedHashMap的写法
 class LRUCache {
 
     private LinkedHashMap<Integer,Integer> cache;
@@ -45,7 +44,7 @@ class LRUCache {
 
     public int get(int key) {
         if(cache==null)
-            return-1;
+            return -1;
         return cache.get(key)==null?-1:cache.get(key);
     }
 

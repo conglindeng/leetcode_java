@@ -1,14 +1,27 @@
 package algorithm;
 
 public class BinarySearch {
-    public static int binarySearch(int[] data){
-        int right=data.length-1;
+    private BinarySearch() {
+    }
+
+    public static int binarySearch(int[] array,int target){
+        int result=-1;
         int left=0;
+        int right=array.length-1;
         int middle;
-        while(right<=left){
+        while(left<=right){
+            middle=(left+right)/2;
+            if(array[middle]==target){
+                result=middle;
+                break;
+            }
+            else if(array[middle]<target){
+                left=middle+1;
+            }else{
+                right=middle-1;
+            }
 
         }
-
-        return -1;
+        return result;
     }
 }
