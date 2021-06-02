@@ -29,5 +29,7 @@ public class Main {
         lRUCache.get(2);*/
 
         new LargeQuantitiesSort().largeQuantitiesSort();
+
+        new CheckSubarraySum_523().checkSubarraySum(new int[]{2,4,3},6);
     }
 }
