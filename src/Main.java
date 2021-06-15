@@ -3,6 +3,7 @@ import algorithm.*;
 import algorithm.slidingwindow.MaxSum;
 import array.MergeTwoArray;
 import leetcode.easy.IsPowerOfFour_342;
+import leetcode.easy.LastStoneWeight_1046;
 import leetcode.easy.XorOperation_1486;
 import leetcode.middle.*;
 import net.sf.cglib.core.CollectionUtils;
@@ -27,9 +28,17 @@ public class Main {
         lRUCache.put(2, 2);
         lRUCache.get(1);
         lRUCache.get(2);*/
+        System.out.println(new NumSquares_279().numSquares(6));
+    }
 
-        new LargeQuantitiesSort().largeQuantitiesSort();
 
-        new CheckSubarraySum_523().checkSubarraySum(new int[]{2,4,3},6);
+    public static int[] selectSort(int[] nums){
+        int length = nums.length;
+        for (int i = 0; i < length-2; i++) {
+            for(int j=i+1;j<length;j++){
+
+            }
+        }
+        return nums;
     }
 }
