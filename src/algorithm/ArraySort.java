@@ -44,7 +44,32 @@ public class ArraySort {
         }
     }
 
-    public void mergeSort(int[] array){
+
+    // todo：归并排序
+    public static void mergeSort(int[] array){
 
     }
+
+
+
+    public static void shellSort(int[] array){
+        int n=array.length;
+        for( int step=n/2;step>0;step=step/2){
+            for(int i=step;i<n;i++){
+                //对每一个数进行插入排序
+                for(int m=i-step;m>=0;m-=step){
+                    if(array[m]>array[m+step]){
+                        int temp=array[m];
+                        array[m]=array[m+step];
+                        array[m+step]=temp;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
+
 }

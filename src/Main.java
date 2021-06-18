@@ -4,11 +4,11 @@ import algorithm.slidingwindow.MaxSum;
 import array.MergeTwoArray;
 import leetcode.easy.IsPowerOfFour_342;
 import leetcode.easy.LastStoneWeight_1046;
+import leetcode.easy.PeakIndexInMountainArray_852;
 import leetcode.easy.XorOperation_1486;
 import leetcode.middle.*;
 import net.sf.cglib.core.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import sort.ArraySort;
 import sort.LargeQuantitiesSort;
 import struct.TreeNode;
 
@@ -22,23 +22,18 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        UUID uuid = UUID.randomUUID();
+        System.out.println(uuid.toString().replace("-", ""));
+
+        int[] array = {1, 0, 4, -1, 3, 5, -6, -3, 2};
+        ArraySort.shellSort(array);
+        System.out.println(array);
 /*        LRUCache_146_Optimize lRUCache = new LRUCache_146_Optimize(1);
         lRUCache.put(1, 1);
         lRUCache.get(1);
         lRUCache.put(2, 2);
         lRUCache.get(1);
         lRUCache.get(2);*/
-        System.out.println(new NumSquares_279().numSquares(6));
-    }
 
-
-    public static int[] selectSort(int[] nums){
-        int length = nums.length;
-        for (int i = 0; i < length-2; i++) {
-            for(int j=i+1;j<length;j++){
-
-            }
-        }
-        return nums;
     }
 }
