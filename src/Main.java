@@ -25,9 +25,7 @@ public class Main {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
-        int[] array = {1, 0, 4, -1, 3, 5, -6, -3, 2};
-        ArraySort.shellSort(array);
-        System.out.println(array);
+        CountNumbersWithUniqueDigits_357.countNumbersWithUniqueDigits(3);
 /*        LRUCache_146_Optimize lRUCache = new LRUCache_146_Optimize(1);
         lRUCache.put(1, 1);
         lRUCache.get(1);
