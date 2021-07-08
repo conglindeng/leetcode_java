@@ -30,5 +30,19 @@ public class Main {
         lRUCache.get(1);
         lRUCache.get(2);*/
 
+
+        Thread t1= new Thread(()->{
+           while(true){
+               System.out.println(" keep going ");
+               if(Thread.currentThread().isInterrupted()){
+                   System.out.println("  exit for interrupted ");
+                   return;
+               }
+           }
+        });
+        t1.start();
+        Thread.sleep(2000);
+        t1.interrupt();
+
     }
 }
