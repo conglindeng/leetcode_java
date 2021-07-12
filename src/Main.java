@@ -9,6 +9,7 @@ import newcode.MergeTwoSortArray;
 import org.apache.commons.lang.StringUtils;
 import sort.LargeQuantitiesSort;
 import struct.TreeNode;
+import util.StringUtils;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,19 +31,11 @@ public class Main {
         lRUCache.get(1);
         lRUCache.get(2);*/
 
+        new NC109_Solve().solve(new char[][]{{'1','0','1'},{'0','0','1'},{'1','0','0'}});
 
-        Thread t1= new Thread(()->{
-           while(true){
-               System.out.println(" keep going ");
-               if(Thread.currentThread().isInterrupted()){
-                   System.out.println("  exit for interrupted ");
-                   return;
-               }
-           }
-        });
-        t1.start();
-        Thread.sleep(2000);
-        t1.interrupt();
-
+        Map<String,String> param=new HashMap<>();
+        param.put("name","dsfdsf");
+        param.put("md","yyyyy");
+        StringUtils.replace(" select {{md}} * from {{  name ",param);
     }
 }
