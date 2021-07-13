@@ -1,6 +1,7 @@
 
 import algorithm.*;
 import algorithm.slidingwindow.MaxSum;
+import annotation.DclTest;
 import array.MergeTwoArray;
 import leetcode.easy.*;
 import leetcode.middle.*;
@@ -11,6 +12,8 @@ import sort.LargeQuantitiesSort;
 import struct.TreeNode;
 import util.StringUtils;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicStampedReference;
@@ -31,11 +34,21 @@ public class Main {
         lRUCache.get(1);
         lRUCache.get(2);*/
 
-        new NC109_Solve().solve(new char[][]{{'1','0','1'},{'0','0','1'},{'1','0','0'}});
+        NC42_PermuteUnique nc42_permuteUnique = new NC42_PermuteUnique();
 
-        Map<String,String> param=new HashMap<>();
-        param.put("name","dsfdsf");
-        param.put("md","yyyyy");
-        StringUtils.replace(" select {{md}} * from {{  name ",param);
+        dealAnnotation(nc42_permuteUnique);
     }
+
+    private static void dealAnnotation(NC42_PermuteUnique nc42_permuteUnique) {
+        Class<? extends NC42_PermuteUnique> aClass = nc42_permuteUnique.getClass();
+        Field[] fields = aClass.getDeclaredFields();
+        for(Field f: fields){
+            f.setAccessible(true);
+            DclTest declaredAnnotations = f.getDeclaredAnnotation(DclTest.class);
+            String value = declaredAnnotations.value();
+            System.out.println(
+            );
+        }
+    }
+
 }
