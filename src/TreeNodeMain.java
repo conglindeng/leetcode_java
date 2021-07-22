@@ -1,5 +1,7 @@
 import leetcode.middle.PathSum_437;
 import leetcode.middle.Rob_TreeNode_337;
+import newcode.NC14_ZigzagLevelOrder;
+import newcode.NC33_MergeTwoLists;
 import newcode.NC8_PathSum;
 import tree.GetHeight;
 import struct.TreeNode;
@@ -17,12 +19,11 @@ public class TreeNodeMain {
         treeNode1.left=treeNode2;
         treeNode1.right=treeNode3;
         treeNode2.left=treeNode4;
-        treeNode2.right=treeNode6;
+        treeNode3.right=treeNode5;
 
-        treeNode3.left=treeNode5;
-        treeNode3.right=treeNode7;
+        //treeNode3.left=treeNode5;
+        //treeNode3.right=treeNode7;
 
-        new NC8_PathSum().pathSum(treeNode1,9);
 
 
     }

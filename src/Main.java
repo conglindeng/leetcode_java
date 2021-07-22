@@ -17,7 +17,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicStampedReference;
-import java.util.stream.Collectors;
+
 
 public class Main {
     static long[][] arr;
@@ -33,22 +33,10 @@ public class Main {
         lRUCache.put(2, 2);
         lRUCache.get(1);
         lRUCache.get(2);*/
+        //new NC18_RotateMatrix().rotateMatrix(new int [][]{{1,2,3},{4,5,6},{7,8,9}},3);
 
-        NC42_PermuteUnique nc42_permuteUnique = new NC42_PermuteUnique();
+        //new NC77_ReOrderArray().reOrderArray(new int[]{1, 2, 4, 5, 7});
 
-        dealAnnotation(nc42_permuteUnique);
+        new FindStrInArray().findStrInArray(new char[][]{{'a','d','n'},{'b','n','a'},{'m','d','a'}},"aanda");
     }
-
-    private static void dealAnnotation(NC42_PermuteUnique nc42_permuteUnique) {
-        Class<? extends NC42_PermuteUnique> aClass = nc42_permuteUnique.getClass();
-        Field[] fields = aClass.getDeclaredFields();
-        for(Field f: fields){
-            f.setAccessible(true);
-            DclTest declaredAnnotations = f.getDeclaredAnnotation(DclTest.class);
-            String value = declaredAnnotations.value();
-            System.out.println(
-            );
-        }
-    }
-
 }
