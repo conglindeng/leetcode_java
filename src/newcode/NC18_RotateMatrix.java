@@ -2,19 +2,26 @@ package newcode;
 
 public class NC18_RotateMatrix {
     public int[][] rotateMatrix(int[][] mat, int n) {
-        // write code here
-        //int k= (int)Math.ceil(n / 2);
-        int m = n - 1;
-        int k = 2;
-        for (int i = 0; i < k; i++) {
-            for (int j = i; j < k; j++) {
+        if (mat == null) {
+            return null;
+        }
+        int height = mat.length;
+        int width = mat[0].length;
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < i; j++) {
                 int temp = mat[i][j];
-                mat[i][j] = mat[m - i][j];
-                mat[m - i][j] = mat[m - i][m - j];
-                mat[m - i][m - j] = mat[i][m - j];
-                mat[i][m - j] = temp;
+                mat[i][j] = mat[j][i];
+                mat[j][i] = temp;
+            }
+        }
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width / 2; j++) {
+                int temp = mat[i][j];
+                mat[i][j] = mat[i][width - j];
+                mat[i][width - j] = temp;
             }
         }
         return mat;
     }
+
 }

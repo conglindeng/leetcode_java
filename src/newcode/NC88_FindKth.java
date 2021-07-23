@@ -19,16 +19,44 @@ public class NC88_FindKth {
         if (K > n) {
             return -1;
         }
-        return 1;
-
+        return recursionSort(a, 0, n - 1, K - 1);
     }
 
 
-    private void fastSort(int[] a, int begin, int end) {
+    private int fastSort(int[] a, int begin, int end) {
         int base = a[begin];
-        while(begin<end){
-
+        while (begin - end < 0) {
+            while (begin < end && a[end] <= base) {
+                end--;
+            }
+            if (begin < end) {
+                a[begin] = a[end];
+            }
+            while (begin < end && a[begin] > base) {
+                begin++;
+            }
+            if (begin < end) {
+                a[end] = a[begin];
+            }
         }
+        a[end] = base;
+        return end;
+        //end 左右已经排好序
+    }
+
+    private int recursionSort(int[] a, int begin, int end, int k) {
+        if (begin <= end) {
+            int i = fastSort(a, begin, end);
+            if (i == k) {
+                return a[k];
+            }
+            if (i < k) {
+                return recursionSort(a, i + 1, end, k);
+            } else {
+                return recursionSort(a, begin, i - 1, k);
+            }
+        }
+        return -1;
     }
 
 }

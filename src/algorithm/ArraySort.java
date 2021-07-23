@@ -69,7 +69,39 @@ public class ArraySort {
         }
     }
 
+    public static void fastSort(int[] a){
+        recursionSort(a,0,a.length-1);
+    }
 
+
+    private static int doFastSort(int[] a, int begin, int end) {
+        int base = a[begin];
+        while (begin < end) {
+            while (begin < end && a[end] >= base) {
+                end--;
+            }
+            if (begin < end) {
+                a[begin] = a[end];
+            }
+            while (begin < end && a[begin] < base) {
+                begin++;
+            }
+            if (begin < end) {
+                a[end] = a[begin];
+            }
+        }
+        a[end] = base;
+        return end;
+        //end 左右已经排好序
+    }
+
+    private static void recursionSort(int[] a, int begin, int end) {
+        if (begin < end) {
+            int i = doFastSort(a, begin, end);
+            recursionSort(a, i + 1, end);
+            recursionSort(a, begin, i - 1);
+        }
+    }
 
 
 }
