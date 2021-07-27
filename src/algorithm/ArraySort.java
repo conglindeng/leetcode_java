@@ -1,6 +1,11 @@
 package algorithm;
 
 public class ArraySort {
+
+    /**
+     * 冒泡排序
+     * @param array
+     */
     public static void buddleSort(int[] array) {
         int length = array.length;
         for (int i = 0; i < length; i++) {
@@ -14,6 +19,10 @@ public class ArraySort {
         }
     }
 
+    /**
+     * 选择排序
+     * @param array
+     */
     public static void selectionSort(int[] array){
         int length = array.length;
         for (int i = 0; i < length; i++) {
@@ -30,7 +39,10 @@ public class ArraySort {
         }
     }
 
-
+    /**
+     * 插入排序
+     * @param array
+     */
     public static void insertSort(int[] array){
         int length = array.length;
         for (int i = 1; i < length; i++) {
@@ -40,28 +52,68 @@ public class ArraySort {
                 array[position]=array[position-1];
                 position--;
             }
-            array[position]=cur;
+            array[position] = cur;
         }
     }
 
 
-    // todo：归并排序
-    public static void mergeSort(int[] array){
-
+    /**
+     * 归并排序
+     * @param array
+     */
+    public static void mergeSort(int[] array) {
+        doMergeSort(array, 0, array.length - 1);
     }
 
 
+    private static void doMergeSort(int[] array, int begin, int end) {
+        if (begin < end) {
+            int mid = (begin + end) / 2 ;
+            doMergeSort(array, begin, mid);
+            doMergeSort(array, mid + 1, end);
+            mergeTwoArray(array, begin, mid, mid + 1, end);
+        }
+    }
 
-    public static void shellSort(int[] array){
-        int n=array.length;
-        for( int step=n/2;step>0;step=step/2){
-            for(int i=step;i<n;i++){
+
+    private static void mergeTwoArray(int[] array, int left, int right, int begin, int end) {
+        int[] temp = new int[end - left + 1];
+        int index = 0;
+        int cur1 = left;
+        int cur2 = begin;
+        while (cur1 <= right && cur2 <= end) {
+            if (array[cur1] < array[cur2]) {
+                temp[index++] = array[cur1++];
+            } else {
+                temp[index++] = array[cur2++];
+            }
+        }
+        while(cur1<=right){
+            temp[index++]=array[cur1++];
+        }
+        while(cur2<=end){
+            temp[index++]=array[cur2++];
+        }
+        for (int i = left; i <= end; i++) {
+            array[i] = temp[i - left];
+        }
+    }
+
+
+    /**
+     * 希尔排序
+     * @param array
+     */
+    public static void shellSort(int[] array) {
+        int n = array.length;
+        for (int step = n / 2; step > 0; step = step / 2) {
+            for (int i = step; i < n; i++) {
                 //对每一个数进行插入排序
-                for(int m=i-step;m>=0;m-=step){
-                    if(array[m]>array[m+step]){
-                        int temp=array[m];
-                        array[m]=array[m+step];
-                        array[m+step]=temp;
+                for (int m = i - step; m >= 0; m -= step) {
+                    if (array[m] > array[m + step]) {
+                        int temp = array[m];
+                        array[m] = array[m + step];
+                        array[m + step] = temp;
                     }
                 }
             }
@@ -69,6 +121,10 @@ public class ArraySort {
         }
     }
 
+    /**
+     * 快排
+     * @param a
+     */
     public static void fastSort(int[] a){
         recursionSort(a,0,a.length-1);
     }
