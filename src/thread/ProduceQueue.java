@@ -53,7 +53,7 @@ public class ProduceQueue {
 
         }finally {
             lock.unlock();
-            return result;
         }
+        return result;
     }
 }
