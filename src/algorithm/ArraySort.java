@@ -159,5 +159,60 @@ public class ArraySort {
         }
     }
 
+    /**
+     * 堆排
+     * @param array
+     */
+    public static void heapSort(int[] array) {
+        if (array == null || array.length < 2) {
+            return;
+        }
+        //buid heap
+        int length = array.length;
+        for (int i = 1; i < length; i++) {
+            siftUp(i, array, array[i]);
+        }
+        int size = length;
+        //不停的弹出堆顶元素，放在堆后的第一个位置，并不断调整堆结构
+        for (int i = length - 1; i > 0; i--) {
+            int temp = array[0];
+            siftDown(0, array, size--, array[i]);
+            array[i] = temp;
+        }
+    }
+
+    private static void siftUp(int index, int[] array, int data) {
+        while (index > 0) {
+            int parent = index >> 1;
+            if (array[parent] < data) {
+                break;
+            }
+            array[index] = array[parent];
+            index = parent;
+        }
+        array[index] = data;
+    }
+
+    private static void siftDown(int index, int[] array, int size, int data) {
+        int half = size >>> 1;
+        while (index < half) {
+            //从左右子节点中找寻向上升级符合要求的候选node，默认先给left节点
+            int condidate = (index << 1) + 1;
+            int right = condidate + 1;
+            int condidateVal = array[condidate];
+            //如果right节点的值小于左边的节点，说明候选node应该为right节点
+            if (right < size && array[right] < condidateVal) {
+                condidateVal = array[right];
+                condidate = right;
+            }
+            //此时再和最后一个下沉元素比较，如果最后一个下沉元素还要小，则最后一个元素的位置就是在第0位
+            if (data < condidateVal) {
+                break;
+            }
+            array[index] = condidateVal;
+            index = condidate;
+        }
+        array[index] = data;
+    }
 
 }

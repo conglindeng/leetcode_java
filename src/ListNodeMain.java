@@ -1,4 +1,5 @@
 import linkedlist.TwoPointer;
+import newcode.*;
 import struct.ListNode;
 
 public class ListNodeMain {
@@ -20,8 +21,8 @@ public class ListNodeMain {
         node1.next=node2;
         node2.next=node3;
         node3.next=node4;
-//
-//        node4.next=node5;
+
+        node4.next=node5;
 //        node5.next=node6;
 //        node6.next=node7;
 //        node7.next=node8;
@@ -37,8 +38,7 @@ public class ListNodeMain {
         node12.next=node6;
         System.out.println(TwoPointer.findIntersectingNode_2(node1, node10).val);*/
         //endregion
-
-        System.out.println(TwoPointer.removeNthFromEnd(node1, 4));
-        //ListNode head= new ListNode(1,new ListNode(1,null));
+        ListNode listNode = new NC69_FindKthToTail().FindKthToTail(node1, 5);
+        System.out.println();
     }
 }

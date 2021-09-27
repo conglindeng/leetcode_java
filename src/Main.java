@@ -1,21 +1,14 @@
 
-import algorithm.*;
-import algorithm.slidingwindow.MaxSum;
-import annotation.DclTest;
-import array.MergeTwoArray;
+import algorithm.ArraySort;
 import leetcode.easy.*;
-import leetcode.middle.*;
-import net.sf.cglib.core.CollectionUtils;
 import newcode.*;
-import sort.LargeQuantitiesSort;
-import struct.TreeNode;
-import util.StringUtils;
+import util.Heap;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
+import java.lang.ref.WeakReference;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicStampedReference;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 public class Main {
@@ -33,10 +26,27 @@ public class Main {
         lRUCache.get(1);
         lRUCache.get(2);*/
 
-        new NC48_Search().search(new int[]{6,8,10,0,2,4},2);
+        //String[] strings = new NC124_TrieU().trieU(new String[][]{{"1", "qwer"}, {"1", "qwe"}, {"3", "qwer"}, {"4", "q"}, {"2", "qwer"}, {"3", "qwer"}, {"4", "q"}});
+
+        //System.out.println(strings);
+
+
+        // todo: begin
+        //List<String> strings = new NC20_RestoreIpAddresses().restoreIpAddresses("23001000");
+        //new NC10_Solve().solve("733064366","459309139");
+        //new NC126_MinMoney().minMoney(new int{}{2, 3, 5}, 20);
+        //new NC110_Solve().solve(6, 5, new int{}{1, 2, 3, 4, 5, 6});
+        // todo: end
+
+        ArraySort.heapSort(new int[]{3,4});
 
 
         System.out.println();
 
     }
+
+
+
+
+
 }
