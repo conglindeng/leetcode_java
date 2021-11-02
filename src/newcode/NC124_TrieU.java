@@ -31,17 +31,6 @@ public class NC124_TrieU {
      */
     public String[] trieU(String[][] operators) {
         // write code here
-/*        insert("abc");
-        insert("a");
-        insert("abn");
-        insert("abnh");
-        insert("nh");
-        boolean abn = search("abn");
-        delete("abn");
-        delete("abnh");
-        boolean abn2 = search("abn");
-        boolean ab = search("ab");
-        int count = prefixNumber("a");*/
         if (operators == null || operators.length == 0) {
             return null;
         }

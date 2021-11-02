@@ -65,7 +65,12 @@ public class ArraySort {
         doMergeSort(array, 0, array.length - 1);
     }
 
-
+    /**
+     * 根据size的中位数将数组分为两个部分，左边、右边
+     * 排序左边
+     * 排序右边
+     * 合并左右已排序数组
+     */
     private static void doMergeSort(int[] array, int begin, int end) {
         if (begin < end) {
             int mid = (begin + end) / 2 ;
@@ -75,7 +80,9 @@ public class ArraySort {
         }
     }
 
-
+    /**
+     * 合并左右两个已排序数组
+     */
     private static void mergeTwoArray(int[] array, int left, int right, int begin, int end) {
         int[] temp = new int[end - left + 1];
         int index = 0;
@@ -181,7 +188,16 @@ public class ArraySort {
         }
     }
 
+    /**
+     * 自底向上进行位置的调整
+     * @param index 最后一个位置
+     * @param array 堆数组
+     * @param data 待调整的数据
+     */
     private static void siftUp(int index, int[] array, int data) {
+        //一直的父节点进行比较
+        // 若父节点大于data，则将父节点的值挪到当前index
+        // 否则说明找到当前应该放置的位置了
         while (index > 0) {
             int parent = index >> 1;
             if (array[parent] < data) {

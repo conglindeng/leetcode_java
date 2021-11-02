@@ -22,37 +22,26 @@ public class CasQueue {
     Node tail;
     Node head;
 
-//    public CasQueue() {
-//        tail = new Node(-1);
-//        head = new Node(-1);
-//    }
+    public CasQueue() {
+        tail = new Node(-1);
+        head = new Node(-1);
+    }
 
-    public int dequeue() {
-        for (; ; ) {
-
-        }
+    public void push() {
+        return ;
     }
 
 
-    public boolean enqueue(int val) {
-        for( ; ; ){
-
-        }
+    public int poll(int val) {
+        return -1;
     }
 
     static class Node {
         int val;
-        Node pre;
-        Node next;
+        volatile Node next;
 
         public Node(int val) {
             this.val = val;
-        }
-
-        public Node(int val, Node pre, Node next) {
-            this.val = val;
-            this.pre = pre;
-            this.next = next;
         }
     }
 

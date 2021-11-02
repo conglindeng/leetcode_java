@@ -1,18 +1,27 @@
 
 import algorithm.ArraySort;
 import leetcode.easy.*;
+import leetcode.middle.PermuteUnique_47;
+import leetcode.middle.ReorderedPowerOf2_869;
 import newcode.*;
+import sun.nio.ch.ThreadPool;
 import util.Heap;
 
 import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
 public class Main {
-    static long[][] arr;
+
+    private static final ExecutorService executorService = Executors.newCachedThreadPool(Executors.defaultThreadFactory());
 
     public static void main(String[] args) throws Exception {
 
@@ -28,9 +37,6 @@ public class Main {
 
         //String[] strings = new NC124_TrieU().trieU(new String[][]{{"1", "qwer"}, {"1", "qwe"}, {"3", "qwer"}, {"4", "q"}, {"2", "qwer"}, {"3", "qwer"}, {"4", "q"}});
 
-        //System.out.println(strings);
-
-
         // todo: begin
         //List<String> strings = new NC20_RestoreIpAddresses().restoreIpAddresses("23001000");
         //new NC10_Solve().solve("733064366","459309139");
@@ -38,13 +44,11 @@ public class Main {
         //new NC110_Solve().solve(6, 5, new int{}{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        ArraySort.heapSort(new int[]{3,4});
-
+        int[] arr = {4, 6, 2, 0,8,1, 7};
+        boolean b = new ReorderedPowerOf2_869().reorderedPowerOf2(10);
 
         System.out.println();
-
     }
-
 
 
 

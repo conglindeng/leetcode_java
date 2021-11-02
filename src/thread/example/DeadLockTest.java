@@ -1,7 +1,5 @@
 package thread.example;
 
-import javafx.util.Pair;
-import org.openjdk.jol.info.ClassLayout;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
