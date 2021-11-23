@@ -23,7 +23,7 @@ class ZeroEvenOdd {
         for (int i = 1; i <= n; i++) {
             zeroLock.acquire();
             printNumber.accept(0);
-            if (i % 2 != 0) {
+            if ((i & 1) == 1) {
                 oddLock.release();
             } else {
                 evenLock.release();
@@ -33,18 +33,22 @@ class ZeroEvenOdd {
     }
 
     public void even(IntConsumer printNumber) throws InterruptedException {
-        for (int i = 1; i <= n; i += 2) {
-            evenLock.acquire();
-            printNumber.accept(i);
-            zeroLock.release();
+        for (int i = 1; i <= n; i++) {
+            if ((i & 1) == 0) {
+                evenLock.acquire();
+                printNumber.accept(i);
+                zeroLock.release();
+            }
         }
     }
 
     public void odd(IntConsumer printNumber) throws InterruptedException {
-        for (int i = 2; i <= n; i += 2) {
-            oddLock.acquire();
-            printNumber.accept(i);
-            zeroLock.release();
+        for (int i = 1; i <= n; i ++) {
+            if((i & 1) == 1){
+                oddLock.acquire();
+                printNumber.accept(i);
+                zeroLock.release();
+            }
         }
     }
 }
