@@ -1,10 +1,10 @@
-package leetcode.middle.thread;
+package leetcode.middle.thread.zeroevenodd;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.IntConsumer;
 
-class ZeroEvenOdd {
+class ZeroEvenOdd_Semaphore {
     //零
     private final Semaphore zeroLock = new Semaphore(1);
     //偶数
@@ -14,7 +14,7 @@ class ZeroEvenOdd {
 
     private int n;
 
-    public ZeroEvenOdd(int n) {
+    public ZeroEvenOdd_Semaphore(int n) {
         this.n = n;
     }
 
@@ -23,7 +23,7 @@ class ZeroEvenOdd {
         for (int i = 1; i <= n; i++) {
             zeroLock.acquire();
             printNumber.accept(0);
-            if (i % 2 != 0) {
+            if ((i & 1) == 1) {
                 oddLock.release();
             } else {
                 evenLock.release();
@@ -33,18 +33,22 @@ class ZeroEvenOdd {
     }
 
     public void even(IntConsumer printNumber) throws InterruptedException {
-        for (int i = 1; i <= n; i += 2) {
-            evenLock.acquire();
-            printNumber.accept(i);
-            zeroLock.release();
+        for (int i = 1; i <= n; i++) {
+            if ((i & 1) == 0) {
+                evenLock.acquire();
+                printNumber.accept(i);
+                zeroLock.release();
+            }
         }
     }
 
     public void odd(IntConsumer printNumber) throws InterruptedException {
-        for (int i = 2; i <= n; i += 2) {
-            oddLock.acquire();
-            printNumber.accept(i);
-            zeroLock.release();
+        for (int i = 1; i <= n; i ++) {
+            if((i & 1) == 1){
+                oddLock.acquire();
+                printNumber.accept(i);
+                zeroLock.release();
+            }
         }
     }
 }
