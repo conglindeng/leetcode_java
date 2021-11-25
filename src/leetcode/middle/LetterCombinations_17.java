@@ -1,6 +1,5 @@
 package leetcode.middle;
 
-import net.sf.cglib.core.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
