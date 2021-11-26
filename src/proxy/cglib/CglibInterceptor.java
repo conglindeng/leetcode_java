@@ -7,6 +7,7 @@ import net.sf.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
+
 public class CglibInterceptor implements MethodInterceptor {
 
     public Object getInstance(Class clazz){

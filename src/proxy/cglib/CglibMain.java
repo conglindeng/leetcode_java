@@ -1,6 +1,7 @@
 package proxy.cglib;
 
 import jdk.nashorn.internal.ir.CallNode;
+import proxy.cglib.CglibTest;
 
 public class CglibMain {
 
