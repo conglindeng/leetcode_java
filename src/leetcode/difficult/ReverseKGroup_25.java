@@ -65,6 +65,6 @@ public class ReverseKGroup_25 {
             first.next = cursor;
             maxCount -= k;
         }
-        return head;
+        return mockHead.next;
     }
 }
