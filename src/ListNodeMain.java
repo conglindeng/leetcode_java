@@ -1,3 +1,6 @@
+import leetcode.difficult.MergeKLists_23;
+import leetcode.middle.RemoveNthFromEnd_19;
+import leetcode.middle.SwapPairs_24;
 import linkedlist.TwoPointer;
 import newcode.*;
 import struct.ListNode;
@@ -10,9 +13,9 @@ public class ListNodeMain {
         //new DeleteDuplicates_82().deleteDuplicates(head);
 
         ListNode node1=new ListNode(1);
-        ListNode node2=new ListNode(1);
-        ListNode node3=new ListNode(2);
-        ListNode node4=new ListNode(2);
+        ListNode node2=new ListNode(2);
+        ListNode node3=new ListNode(3);
+        ListNode node4=new ListNode(4);
         ListNode node5=new ListNode(5);
         ListNode node6=new ListNode(6);
         ListNode node7=new ListNode(7);
@@ -21,12 +24,12 @@ public class ListNodeMain {
         node1.next=node2;
         node2.next=node3;
         node3.next=node4;
-
         node4.next=node5;
+
 //        node5.next=node6;
-//        node6.next=node7;
-//        node7.next=node8;
-//        node8.next=node9;
+        node6.next=node7;
+        node7.next=node8;
+        node8.next=node9;
 
 
         //region make a intersect
@@ -38,7 +41,7 @@ public class ListNodeMain {
         node12.next=node6;
         System.out.println(TwoPointer.findIntersectingNode_2(node1, node10).val);*/
         //endregion
-        ListNode listNode = new NC69_FindKthToTail().FindKthToTail(node1, 5);
+        new SwapPairs_24().swapPairs(node1);
         System.out.println();
     }
 }
