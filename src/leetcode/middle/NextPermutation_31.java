@@ -5,16 +5,25 @@ public class NextPermutation_31 {
         if (nums == null || nums.length == 1) {
             return;
         }
-        for (int length = nums.length - 1; length >= 0; length--) {
-
+        int i = nums.length - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
         }
-
+        if (i >= 0) {
+            int j = nums.length - 1;
+            while (j > i && nums[j] <= nums[i]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+        reverse(nums, i + 1, nums.length - 1);
     }
 
     private void reverse(int[] nums, int start, int end) {
-        int mid = start + (end - start) / 2;
-        for (int i = start; i < mid; i++) {
-            swap(nums, i, end - i + start);
+        while (start < end) {
+            swap(nums, start, end);
+            start++;
+            end--;
         }
     }
 
