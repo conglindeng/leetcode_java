@@ -5,20 +5,31 @@ public class NextPermutation_31 {
         if (nums == null || nums.length == 1) {
             return;
         }
-        //从后往前找，找到第一个nums[i]>nums[i-1]并进行交换
-        for (int j = nums.length - 1; j > 0; j--) {
-            if (nums[j] > nums[j - 1]) {
-                int temp = nums[j];
-                nums[j] = nums[j - 1];
-                nums[j - 1] = temp;
-                return;
+        int i = nums.length - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
+        }
+        if (i >= 0) {
+            int j = nums.length - 1;
+            while (j > i && nums[j] <= nums[i]) {
+                j--;
             }
+            swap(nums, i, j);
         }
-        for (int i = 0; i <= (nums.length - 1) / 2; i++) {
-            int right = nums.length - 1 - i;
-            int temp=nums[right];
-            nums[right]=nums[i];
-            nums[i]=temp;
+        reverse(nums, i + 1, nums.length - 1);
+    }
+
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            swap(nums, start, end);
+            start++;
+            end--;
         }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }

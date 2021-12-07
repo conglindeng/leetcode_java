@@ -1,8 +1,7 @@
 
 import algorithm.ArraySort;
 import leetcode.easy.*;
-import leetcode.middle.PermuteUnique_47;
-import leetcode.middle.ReorderedPowerOf2_869;
+import leetcode.middle.*;
 import newcode.*;
 import sun.nio.ch.ThreadPool;
 import util.Heap;
@@ -44,8 +43,10 @@ public class Main {
         //new NC110_Solve().solve(6, 5, new int{}{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        int[] arr = {4, 6, 2, 0,8,1, 7};
-        boolean b = new ReorderedPowerOf2_869().reorderedPowerOf2(10);
+
+        //new IsPossibleDivide_1296().findIndex(8,new int[]{1,2,3,3,5,6,7,7},null);
+        new FindRelativeRanks_506().findRelativeRanks(new int[]{5, 4, 3, 2, 1});
+
 
         System.out.println();
     }
