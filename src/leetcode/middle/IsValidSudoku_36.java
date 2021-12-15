@@ -6,19 +6,23 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class IsValidSudoku_36 {
-    Map<Integer, TreeSet<Character>> columnWork = new HashMap<>();
-    Map<Integer, TreeSet<Character>> rowWork = new HashMap<>();
-    Map<Integer, TreeSet<Character>> subWork = new HashMap<>();
-
+    //每一行一个set
+    private Map<Integer, TreeSet<Character>> rowMap = new HashMap<>();
+    private Map<Integer, TreeSet<Character>> colMap = new HashMap<>();
+    private Map<Integer, TreeSet<Character>> subMap = new HashMap<>();
 
     public boolean isValidSudoku(char[][] board) {
         int height = board.length;
         int width = board[0].length;
         for (int i = 0; i < height; i++) {
+            TreeSet<Character> rowTree = rowMap.getOrDefault(i, new TreeSet<>());
             for (int j = 0; j < width; j++) {
-                int subIndex = i / 3 + j / 3;
-                boolean validate = validateRowOrColumn(board[i][j], i, columnWork) && validateRowOrColumn(board[i][j], j, rowWork) && validateRowOrColumn(board[i][j], subIndex, subWork);
-                if (!validate) {
+                char c = board[i][j];
+                if (rowTree.contains(c)) {
+                    return false;
+                }
+                rowTree.add(c);
+                if (!validateIsRepeat(i, j, c)) {
                     return false;
                 }
             }
@@ -26,18 +30,21 @@ public class IsValidSudoku_36 {
         return true;
     }
 
-    private boolean validateRowOrColumn(char c, int index, Map<Integer, TreeSet<Character>> work) {
-        TreeSet<Character> integers = work.get(index);
-        if (integers == null) {
-            integers = new TreeSet<>();
+    private boolean validateIsRepeat(int row, int col, char c) {
+        if (c < '0' || c > '9') {
+            return true;
         }
-        if (c <= '9' && c >= '0' && integers.contains(c)) {
+        TreeSet<Character> colTree = colMap.getOrDefault(col, new TreeSet<>());
+        if (colTree.contains(c)) {
             return false;
         }
-        if (c <= '9' && c >= '0'){
-            integers.add(c);
+        colTree.add(c);
+        int idx = row / 2 + col / 2;
+        TreeSet<Character> subTree = subMap.getOrDefault(idx, new TreeSet<>());
+        if (subTree.contains(c)) {
+            return false;
         }
-        work.put(index, integers);
+        subTree.add(c);
         return true;
     }
 }

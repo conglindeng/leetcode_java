@@ -2,6 +2,7 @@ package leetcode.middle;
 
 public class ColorBorder_1034 {
     int[][] flag;
+
     public int[][] colorBorder(int[][] grid, int row, int col, int color) {
         // 从grid[row][col]出发，向上下左右进行广度或者深度优先遍历
         // 假设grid[i][j]与grid[row][col]相邻，则判断两个颜色时候一致，如果一致的话，说明应该以grid[i][j]做同样的操作
@@ -11,11 +12,11 @@ public class ColorBorder_1034 {
             return grid;
         }
         flag = new int[grid.length][grid[0].length];
-        doColorBorder(grid, row, col, color, grid[row][col]);
+        dfs(grid, row, col, color, grid[row][col]);
         return grid;
     }
 
-    private void doColorBorder(int[][] grid, int row, int col, int color, int temp) {
+    private void dfs(int[][] grid, int row, int col, int color, int temp) {
         if (row < 0 || row >= grid.length) {
             return;
         }
@@ -27,12 +28,11 @@ public class ColorBorder_1034 {
         }
         flag[row][col] = 1;
         if (grid[row][col] == temp) {
-            doColorBorder(grid, row - 1, col, color, temp);
-            doColorBorder(grid, row + 1, col, color, temp);
-            doColorBorder(grid, row, col - 1, color, temp);
-            doColorBorder(grid, row, col + 1, color, temp);
-        } else {
             grid[row][col] = color;
+            dfs(grid, row - 1, col, color, temp);
+            dfs(grid, row + 1, col, color, temp);
+            dfs(grid, row, col - 1, color, temp);
+            dfs(grid, row, col + 1, color, temp);
         }
     }
 }
