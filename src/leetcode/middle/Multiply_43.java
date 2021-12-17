@@ -37,16 +37,23 @@ public class Multiply_43 {
     }
 
     private void addNum2Str(StringBuilder sb, int index, int num) {
+        if (num == 0) {
+            if (sb.length() <= index) {
+                sb.append(num);
+            }
+            return;
+        }
         int progressions = 0;
         while (num != 0) {
             int addNum = num % 10;
-            if (sb.length() < index) {
+            if (sb.length() <= index) {
                 sb.append(addNum);
+            }else{
+                int i = sb.charAt(index) - '0';
+                int cur = addNum + i + progressions;
+                sb.setCharAt(index, (char) (cur % 10));
+                progressions = cur / 10;
             }
-            int i = sb.charAt(index) - '0';
-            int cur = addNum + i + progressions;
-            sb.setCharAt(index, (char) (cur % 10));
-            progressions = cur / 10;
             index++;
             num = num / 10;
         }
