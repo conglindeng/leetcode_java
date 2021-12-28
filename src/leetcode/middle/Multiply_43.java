@@ -48,10 +48,10 @@ public class Multiply_43 {
             int addNum = num % 10;
             if (sb.length() <= index) {
                 sb.append(addNum);
-            }else{
+            } else {
                 int i = sb.charAt(index) - '0';
                 int cur = addNum + i + progressions;
-                sb.setCharAt(index, (char) (cur % 10));
+                sb.setCharAt(index, (char) (cur % 10 + 48));
                 progressions = cur / 10;
             }
             index++;
