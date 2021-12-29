@@ -1,48 +1,48 @@
 package leetcode.middle;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class EatenApples_1705 {
     public int eatenApples(int[] apples, int[] days) {
         //使用map来维护某一天剩余的可吃苹果
-        //对于天数n来说，最优的抉择是向后取离当前最近的那天的苹果来吃,吃了过后，当前n对应的苹果就过期了，应该remove掉。
-        Map<Integer, Integer> work = new HashMap<>();
+        PriorityQueue<int[]> work = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
+        int i = 0;
         int res = 0;
-        int i = 1;
-        for (; i <= apples.length; i++) {
-            int apple = apples[i-1];
-            int day = days[i-1];
-            if (apple > 0) {
-                work.put(i + day-1, work.getOrDefault(i + day-1, 0) + apple);
+        for (; i < apples.length; i++) {
+            while (!work.isEmpty() && work.peek()[0] < i) {
+                work.poll();
             }
-            res += findOneApple2Eat(i, work);
-            work.remove(i);
+            if (apples[i] != 0) {
+                work.offer(new int[]{i + days[i] - 1, apples[i]});
+            }
+            if (!work.isEmpty()) {
+                int[] peek = work.peek();
+                peek[1]--;
+                res++;
+                if (peek[1] == 0) {
+                    work.poll();
+                }
+            }
+
         }
         while (true) {
-            int oneApple2Eat = findOneApple2Eat(i, work);
-            if (oneApple2Eat == 0) {
+            while (!work.isEmpty() && work.peek()[0] < i) {
+                work.poll();
+            }
+            if (work.isEmpty()) {
                 break;
             }
-            work.remove(i);
+            int[] peek = work.peek();
+            peek[1]--;
+            res++;
+            if (peek[1] == 0) {
+                work.poll();
+            }
             i++;
-            res += 1;
         }
         return res;
-    }
-
-    private int findOneApple2Eat(int i, Map<Integer, Integer> work) {
-        final int[] minDay = {Integer.MAX_VALUE};
-        work.forEach((day, apple) -> {
-            if (apple > 0) {
-                minDay[0] = Math.min(day, minDay[0]);
-            }
-        });
-        int day = minDay[0];
-        if (day == Integer.MAX_VALUE) {
-            return 0;
-        }
-        work.put(day, work.get(day) - 1);
-        return 1;
     }
 }
