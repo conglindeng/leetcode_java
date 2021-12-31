@@ -6,8 +6,8 @@ import java.lang.invoke.MethodType;
 import java.util.Arrays;
 
 public class Insert_57 {
-    public int[][] insert(int[][] intervals, int[] newInterval)  {
-
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        return null;
     }
 
 
