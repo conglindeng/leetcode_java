@@ -21,10 +21,7 @@ public class MaxPathSum_124 {
         }
         int cur = root.val + Math.max(left, right);
         res = Math.max(res, cur);
-        if (cur < 0) {
-            return 0;
-        }
         res = Math.max(left + right + root.val, res);
-        return cur;
+        return Math.max(cur, 0);
     }
 }
