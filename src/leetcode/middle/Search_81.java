@@ -11,6 +11,10 @@ public class Search_81 {
             mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 return true;
+            }
+            if (nums[mid] == nums[left] && nums[mid] == nums[right]) {
+                left++;
+                right--;
             } else if (nums[mid] <= nums[right]) {
                 if (target <= nums[right] && target >= nums[mid]) {
                     left = mid + 1;
@@ -18,7 +22,7 @@ public class Search_81 {
                     right = mid - 1;
                 }
             } else {
-                if (target <= nums[right] && target >= nums[mid]) {
+                if (target <= nums[mid] && target >= nums[left]) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;
