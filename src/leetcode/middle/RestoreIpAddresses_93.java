@@ -1,9 +1,9 @@
-package newcode;
+package leetcode.middle;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NC20_RestoreIpAddresses {
+public class RestoreIpAddresses_93 {
 
     List<String> res = new ArrayList<>();
 
