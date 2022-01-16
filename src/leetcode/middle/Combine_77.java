@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Combine_77 {
-    public List<List<Integer>> combine(int n,int k){
-        if(k>=n){
+    List<List<Integer>> res = new ArrayList<>();
 
-        }
-        return null;
+    public List<List<Integer>> combine(int n, int k) {
+        List<Integer> cur = new ArrayList<>();
+        doCombine(cur, 1, n, k);
+        return res;
     }
 
-    private List<Integer> doCombine(int n,int k){
-        List<Integer> result=new ArrayList<>();
-        if(n==k){
-            for (int i = 1; i <= n; i++) {
-                result.add(i);
-            }
-            return result;
+    private void doCombine(List<Integer> cur, int idx, int n, int length) {
+        if (cur.size() == length) {
+            res.add(new ArrayList<>(cur));
+            return;
         }
-        return null;
+        for (int i = idx; i <= n; i++) {
+            cur.add(i);
+            doCombine(cur, i + 1, n, length);
+            cur.remove(cur.size() - 1);
+        }
     }
 }
