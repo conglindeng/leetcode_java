@@ -19,19 +19,19 @@ public class FindMinDifference_539 {
         if (first.equals(second)) {
             return 0;
         }
-        if ("00:00".equals(first)) {
-            return Math.min(doCalculateDistance(first, second), doCalculateDistance("24:00", second));
-        }
-        if ("00:00".equals(second)) {
-            return Math.min(doCalculateDistance(first, second), doCalculateDistance(first, "24:00"));
-        }
+//        if ("00:00".equals(first)) {
+//            return Math.min(doCalculateDistance(first, second), doCalculateDistance("24:00", second));
+//        }
+//        if ("00:00".equals(second)) {
+//            return Math.min(doCalculateDistance(first, second), doCalculateDistance(first, "24:00"));
+//        }
         return doCalculateDistance(first, second);
     }
 
     private int doCalculateDistance(String first, String second) {
         int f = getMinutes(first);
         int s = getMinutes(second);
-        return Math.abs(f - s);
+        return Math.min(Math.abs(f - s), Math.min(Math.abs(f - s + 1440), Math.abs(f - s - 1440)));
     }
 
     private int getMinutes(String s) {
