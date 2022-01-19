@@ -28,8 +28,4 @@ public class CustomSortString_791 {
         return result;
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(customSortString("kqep","pekeq"));
-    }
 }

@@ -48,8 +48,4 @@ public class CheckInclusion_567 {
 
         return false;
     }
-
-    public static void main(String[] args) {
-        System.out.println(checkInclusion("ab","edgacbioi"));
-    }
 }

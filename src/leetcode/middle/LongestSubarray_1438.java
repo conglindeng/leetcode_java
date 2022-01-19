@@ -20,7 +20,4 @@ public class LongestSubarray_1438 {
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(longestSubarray(new int[]{8,2,4,7},4));
-    }
 }

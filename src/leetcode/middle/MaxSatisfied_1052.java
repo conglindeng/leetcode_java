@@ -22,9 +22,4 @@ public class MaxSatisfied_1052 {
         return  result;
     }
 
-    public static void main(String[] args) {
-        int[] customers=new int[]{1,0,1,2,1,1,7,5};
-        int[] grumpy=new int[]{0,1,0,1,0,1,0,1};
-        System.out.println(maxSatisfied(customers,grumpy,3));
-    }
 }

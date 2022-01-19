@@ -39,7 +39,4 @@ public class LongestSubstring_395 {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(longestSubstring("bbaaacbd",3));
-    }
 }
