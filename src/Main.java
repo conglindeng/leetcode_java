@@ -1,4 +1,5 @@
-import leetcode.middle.KSmallestPairs_373;
+import leetcode.easy.ContainsNearbyDuplicate_219;
+import leetcode.middle.*;
 import newcode.NC110_Solve;
 import newcode.NC126_MinMoney;
 import org.apache.commons.lang.SerializationUtils;
@@ -23,8 +24,8 @@ public class Main {
         new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        new KSmallestPairs_373().kSmallestPairs(new int[]{1,7,11}, new int[]{2,4,6}, 3);
-
+        char[][] nums = new char[][]{{'0', '1', '1'}, {'0', '1', '1'}, {'1', '1', '0'}};
+        new MaximalSquare_221().maximalSquare(nums);
 
         System.out.println();
     }
