@@ -10,10 +10,10 @@ public class TreeNode {
     public int val;
     public List<TreeNode> nodes;
 
-    public TreeNode(TreeNode left, TreeNode right, int val) {
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
         this.left = left;
         this.right = right;
-        this.val = val;
     }
 
     public TreeNode(int val, List<TreeNode> nodes) {
