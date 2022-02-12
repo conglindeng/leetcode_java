@@ -3,10 +3,24 @@ package leetcode.easy;
 import struct.ListNode;
 import struct.TreeNode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class SortedArrayToBST_109 {
     public TreeNode sortedArrayToBST(ListNode head) {
         if (head == null) {
             return null;
+        }
+        List<Integer> items = new ArrayList<>();
+        ListNode cur = head;
+        while (cur != null) {
+            items.add(cur.val);
+            cur = cur.next;
+        }
+        int[] nums = new int[items.size()];
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = items.get(i);
         }
         return doTransform(nums, 0, nums.length - 1);
     }
