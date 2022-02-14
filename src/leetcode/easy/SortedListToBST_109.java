@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SortedArrayToBST_109 {
-    public TreeNode sortedArrayToBST(ListNode head) {
+public class SortedListToBST_109 {
+    public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;
         }
