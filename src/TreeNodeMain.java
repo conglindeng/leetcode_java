@@ -1,4 +1,3 @@
-import leetcode.middle.SumNumbers_129;
 import struct.TreeNode;
 
 public class TreeNodeMain {
@@ -22,6 +21,26 @@ public class TreeNodeMain {
         //treeNode3.right=treeNode7;
 
 
-        new SumNumbers_129().sumNumbers(treeNode1);
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null) {
+            return false;
+        }
+        return bfs(root.left, root.right);
+    }
+
+
+    private boolean bfs(TreeNode f1, TreeNode s2) {
+        if (f1 == null && s2 == null) {
+            return true;
+        }
+        if (f1 == null || s2 == null) {
+            return false;
+        }
+        if (f1.val != s2.val) {
+            return false;
+        }
+        return bfs(f1.left, s2.right) && bfs(f1.right, s2.left);
     }
 }
