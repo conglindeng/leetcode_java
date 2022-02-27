@@ -1,4 +1,4 @@
-import leetcode.middle.DeleteNode_450;
+import leetcode.easy.PostorderTraversal_145;
 import struct.TreeNode;
 
 public class TreeNodeMain {
@@ -18,9 +18,9 @@ public class TreeNodeMain {
 //        treeNode4.left=treeNode5;
 //        treeNode4.right=treeNode6;
 
-        treeNode3.left=treeNode5;
-        treeNode3.right=treeNode7;
-        new DeleteNode_450().deleteNode(treeNode1, 8);
+        treeNode3.left = treeNode5;
+        treeNode3.right = treeNode7;
+        new PostorderTraversal_145().postorderTraversal(treeNode1);
 
     }
 
