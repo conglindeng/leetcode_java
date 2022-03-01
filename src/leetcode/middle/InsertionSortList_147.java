@@ -31,4 +31,30 @@ public class InsertionSortList_147 {
         }
         pre.next = node;
     }
+
+    public ListNode insertionSortList_Optimize(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode mockHead = new ListNode();
+        mockHead.next = head;
+        ListNode lastSortedNode = head;
+        ListNode cur = head.next;
+        while (cur != null) {
+            ListNode next = cur.next;
+            if (cur.val >= lastSortedNode.val) {
+                lastSortedNode = cur;
+            } else {
+                ListNode temp = mockHead;
+                while (temp.next.val < cur.val) {
+                    temp = temp.next;
+                }
+                lastSortedNode.next = next;
+                cur.next = temp.next;
+                temp.next = cur;
+            }
+            cur = next;
+        }
+        return mockHead.next;
+    }
 }

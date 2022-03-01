@@ -1,5 +1,3 @@
-import leetcode.easy.MaximumDifference_2016;
-
 import java.util.UUID;
 
 
@@ -17,7 +15,13 @@ public class Main {
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        new MaximumDifference_2016().maximumDifference(new int[]{7, 1, 5, 4});
+        int[] nums = new int[]{};
+        int left = 0, right = nums.length - 1;
+        int mid;
+        while (left < right) {
+
+        }
+
 
         System.out.println();
     }
