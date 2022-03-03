@@ -1,4 +1,4 @@
-import leetcode.middle.FindPeakElement_162;
+import leetcode.middle.CompareVersion_165;
 
 import java.util.UUID;
 
@@ -17,7 +17,7 @@ public class Main {
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        new FindPeakElement_162().findPeakElement(new int[]{1, 2, 3});
+        new CompareVersion_165().compareVersion("1.001", "1.01.0.1");
 
         System.out.println();
     }
