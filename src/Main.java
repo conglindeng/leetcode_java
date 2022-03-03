@@ -1,3 +1,5 @@
+import leetcode.middle.FindPeakElement_162;
+
 import java.util.UUID;
 
 
@@ -15,13 +17,7 @@ public class Main {
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        int[] nums = new int[]{};
-        int left = 0, right = nums.length - 1;
-        int mid;
-        while (left < right) {
-
-        }
-
+        new FindPeakElement_162().findPeakElement(new int[]{1, 2, 3});
 
         System.out.println();
     }

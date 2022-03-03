@@ -29,4 +29,18 @@ public class FindMin_153 {
         }
         return nums[left];
     }
+
+    public int findMin_Optimize(int[] nums) {
+        int left = 0, right = nums.length - 1;
+        int mid;
+        while (left < right) {
+            mid = left + (right - left) / 2;
+            if (nums[mid] > nums[right]) {
+                right = mid + 1;
+            } else {
+                left = mid;
+            }
+        }
+        return nums[left];
+    }
 }
