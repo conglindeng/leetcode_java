@@ -1,3 +1,4 @@
+import leetcode.easy.FindRestaurant_599;
 import leetcode.middle.CountHighestScoreNodes_2049;
 
 import java.util.UUID;
@@ -18,6 +19,9 @@ public class Main {
         // todo: end
         int a = new CountHighestScoreNodes_2049().countHighestScoreNodes(new int[]{-1, 2, 0});
 
+
+        new FindRestaurant_599().findRestaurant(new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{
+                "KFC", "Shogun", "Burger King"});
 
         System.out.println();
     }
