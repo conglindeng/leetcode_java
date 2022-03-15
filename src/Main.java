@@ -1,5 +1,4 @@
-import leetcode.easy.FindRestaurant_599;
-import leetcode.middle.CountHighestScoreNodes_2049;
+import leetcode.middle.CountMaxOrSubsets_2044;
 
 import java.util.UUID;
 
@@ -17,11 +16,7 @@ public class Main {
         //new NC126_MinMoney().minMoney(new int[]{2, 3, 5}, 20);
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
-        int a = new CountHighestScoreNodes_2049().countHighestScoreNodes(new int[]{-1, 2, 0});
-
-
-        new FindRestaurant_599().findRestaurant(new String[]{"Shogun", "Tapioca Express", "Burger King", "KFC"}, new String[]{
-                "KFC", "Shogun", "Burger King"});
+        new CountMaxOrSubsets_2044().countMaxOrSubsets_Optimize(new int[]{3,1});
 
         System.out.println();
     }
