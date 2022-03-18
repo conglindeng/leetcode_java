@@ -1,26 +1,27 @@
 package thread;
 
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.LongAdder;
 
 public class LargeCountSum {
+    ThreadPoolExecutor executor;
+
     /**
      * 有一千万个数，写一个程序进行高效求和
      */
     public int largeCountSum() {
         int coreSize = Runtime.getRuntime().availableProcessors() + 1;
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(coreSize, coreSize, 5, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>());
         int[] largeCountNums = getLargeCountNums(10000000);
-        LongAdder sum=new LongAdder();
+        executor = new ThreadPoolExecutor(coreSize, coreSize, 5, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>());
+        LongAdder sum = new LongAdder();
         int count = coreSize;
-        int step = largeCountNums.length/count;
+        int step = largeCountNums.length / count;
         for (int i = 0; i < count; i++) {
-           executor.submit(()->{
-               //int left=
-           });
+            executor.submit(() -> {
+                //int left=
+            });
         }
         return -1;
     }

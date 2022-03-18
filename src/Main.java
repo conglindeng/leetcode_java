@@ -1,4 +1,4 @@
-import leetcode.middle.CountMaxOrSubsets_2044;
+import leetcode.middle.Bank_2043;
 
 import java.util.UUID;
 
@@ -16,7 +16,9 @@ public class Main {
         //new NC126_MinMoney().minMoney(new int[]{2, 3, 5}, 20);
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
-        new CountMaxOrSubsets_2044().countMaxOrSubsets_Optimize(new int[]{3,1});
+        Bank_2043 bank = new Bank_2043(new long[]{10, 100, 20, 50, 30});
+        bank.withdraw(3, 10);
+        bank.transfer(5, 1, 20);
 
         System.out.println();
     }
