@@ -1,10 +1,15 @@
-import leetcode.middle.Bank_2043;
-
 import java.util.UUID;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 
 public class Main {
 
+    private final static ThreadPoolExecutor executor = new ThreadPoolExecutor(
+            2, 20, 2, TimeUnit.SECONDS,
+            new LinkedBlockingDeque<>(3), r -> new Thread(r, "myPool")
+    );
 
     public static void main(String[] args) throws Exception {
 
@@ -16,9 +21,18 @@ public class Main {
         //new NC126_MinMoney().minMoney(new int[]{2, 3, 5}, 20);
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
-        Bank_2043 bank = new Bank_2043(new long[]{10, 100, 20, 50, 30});
-        bank.withdraw(3, 10);
-        bank.transfer(5, 1, 20);
+
+        for (int i = 0; i < 20; i++) {
+            executor.submit(() -> {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        executor.shutdown();
+
 
         System.out.println();
     }
