@@ -22,20 +22,10 @@ public class Main {
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
 
-        for (int i = 0; i < 20; i++) {
-            executor.submit(() -> {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
-        }
-        executor.shutdown();
-
 
         System.out.println();
     }
+
 
 
 }
