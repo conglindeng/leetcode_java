@@ -1,3 +1,6 @@
+import leetcode.difficult.FindKthNumber_440;
+
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -21,11 +24,13 @@ public class Main {
         //new NC126_MinMoney().minMoney(new int[]{2, 3, 5}, 20);
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
-
-
+        new FindKthNumber_440().findKthNumber(10, 3);
         System.out.println();
     }
 
 
+    public boolean wordBreak(String s, List<String> wordDict) {
+        return true;
+    }
 
 }
