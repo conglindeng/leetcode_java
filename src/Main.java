@@ -1,4 +1,4 @@
-import leetcode.difficult.FindKthNumber_440;
+import leetcode.middle.MinimumLengthEncoding_820;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,7 +24,7 @@ public class Main {
         //new NC126_MinMoney().minMoney(new int[]{2, 3, 5}, 20);
         // new NC110_Solve().solve(6, 5, new int[]{1, 2, 3, 4, 5, 6});
         // todo: end
-        new FindKthNumber_440().findKthNumber(10, 3);
+        new MinimumLengthEncoding_820().minimumLengthEncoding_Optimize(new String[]{"time", "me", "bell"});
         System.out.println();
     }
 
