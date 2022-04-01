@@ -1,6 +1,5 @@
-import leetcode.middle.MinimumLengthEncoding_820;
+import leetcode.difficult.BusiestServers_1606;
 
-import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -27,10 +26,4 @@ public class Main {
         new MinimumLengthEncoding_820().minimumLengthEncoding_Optimize(new String[]{"time", "me", "bell"});
         System.out.println();
     }
-
-
-    public boolean wordBreak(String s, List<String> wordDict) {
-        return true;
-    }
-
 }
