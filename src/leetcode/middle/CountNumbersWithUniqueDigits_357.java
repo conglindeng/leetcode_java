@@ -14,7 +14,7 @@ package leetcode.middle;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class CountNumbersWithUniqueDigits_357 {
-    public static int countNumbersWithUniqueDigits(int n) {
+    public  int countNumbersWithUniqueDigits(int n) {
         if(n==0)
             return 1;
         int result=0;
