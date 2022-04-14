@@ -1,4 +1,4 @@
-import leetcode.middle.CountNumbersWithUniqueDigits_357;
+import leetcode.easy.ArrayStringsAreEqual_1662;
 
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
