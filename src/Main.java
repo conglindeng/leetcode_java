@@ -1,4 +1,4 @@
-import leetcode.easy.ArrayStringsAreEqual_1662;
+import leetcode.middle.Deserialize_385;
 
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
