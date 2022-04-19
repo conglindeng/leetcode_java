@@ -1,4 +1,4 @@
-import leetcode.middle.LexicalOrder_386;
+import leetcode.easy.ShortestToChar_821;
 
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
