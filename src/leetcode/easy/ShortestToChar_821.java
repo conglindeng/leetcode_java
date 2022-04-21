@@ -57,4 +57,31 @@ public class ShortestToChar_821 {
         }
         return res;
     }
+
+
+    public int[] shortestToChar_Optimize(String s, char c) {
+        int length = s.length();
+        int[] res = new int[length];
+        int left = -length;
+        for (int i = 0; i < length; i++) {
+            if (s.charAt(i) == c) {
+                left = i;
+                res[i] = 0;
+            } else {
+                res[i] = i - left;
+            }
+        }
+        int right = 2 * length;
+        for (int i = length - 1; i >= 0; i--) {
+            if (s.charAt(i) == c) {
+                right = i;
+                res[i] = 0;
+            } else {
+                res[i] = Math.min(right - i, res[i]);
+            }
+        }
+        return res;
+    }
+
+
 }
