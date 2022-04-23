@@ -1,4 +1,4 @@
-import leetcode.middle.MaxRotateFunction_396;
+import leetcode.difficult.OuterTrees_587;
 
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
