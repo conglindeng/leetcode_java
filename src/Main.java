@@ -1,4 +1,4 @@
-import leetcode.middle.LengthLongestPath_388;
+import leetcode.easy.BinaryGap_868;
 
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
