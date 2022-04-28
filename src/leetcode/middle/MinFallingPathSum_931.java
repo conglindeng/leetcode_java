@@ -22,7 +22,7 @@ public class MinFallingPathSum_931 {
             }
         }
         return Arrays.stream(dp[height]).min().getAsInt();
-        //return dp[height][width];
+        //return dp[heights][width];
     }
 
     public int minFallingPathSum_Optimize(int[][] matrix) {
