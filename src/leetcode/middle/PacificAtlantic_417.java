@@ -20,17 +20,21 @@ public class PacificAtlantic_417 {
         boolean[][] pacific = new boolean[m][n];
         boolean[][] atlantic = new boolean[m][n];
         for (int i = 0; i < m; i++) {
-            bfs(i, 0, pacific);
+            //bfs(i, 0, pacific);
+            dfs(i, 0, pacific);
         }
         for (int i = 1; i < n; i++) {
-            bfs(0, i, pacific);
+            //bfs(0, i, pacific);
+            dfs(0, i, pacific);
         }
 
         for (int i = 0; i < m; i++) {
-            bfs(i, n - 1, atlantic);
+            //bfs(i, n - 1, atlantic);
+            dfs(i, n - 1, atlantic);
         }
         for (int i = 0; i < n - 1; i++) {
-            bfs(m - 1, i, atlantic);
+            //bfs(m - 1, i, atlantic);
+            dfs(m - 1, i, atlantic);
         }
         List<List<Integer>> res = new ArrayList<>();
         for (int i = 0; i < m; i++) {
@@ -63,6 +67,21 @@ public class PacificAtlantic_417 {
                     flag[m][n] = true;
                     work.offer(new int[]{m, n});
                 }
+            }
+        }
+    }
+
+
+    private void dfs(int i, int j, boolean[][] flag) {
+        if (flag[i][j]) {
+            return;
+        }
+        flag[i][j] = true;
+        for (int[] dir : dirs) {
+            int row = i + dir[0];
+            int col = j + dir[1];
+            if (row < m && row >= 0 && col < n && col >= 0 && !flag[row][col] && heights[row][col] >= heights[i][j]) {
+                bfs(row, col, flag);
             }
         }
     }
