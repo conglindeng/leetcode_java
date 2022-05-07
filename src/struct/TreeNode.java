@@ -1,7 +1,6 @@
 package struct;
 
-import sun.reflect.generics.tree.Tree;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class TreeNode {
@@ -23,5 +22,6 @@ public class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
+        this.nodes = new ArrayList<>();
     }
 }
