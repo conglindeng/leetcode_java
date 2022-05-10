@@ -1,7 +1,5 @@
+import leetcode.easy.BinaryTreePaths_257;
 import struct.TreeNode;
-import tree.Traverse;
-
-import java.util.List;
 
 public class TreeNodeMain {
     public static void main(String[] args) {
@@ -14,16 +12,19 @@ public class TreeNodeMain {
         TreeNode treeNode7 = new TreeNode(7);
         TreeNode treeNode8 = new TreeNode(8);
         TreeNode treeNode9 = new TreeNode(9);
-        treeNode1.nodes.add(treeNode2);
-        treeNode1.nodes.add(treeNode3);
-        treeNode1.nodes.add(treeNode4);
-        treeNode3.nodes.add(treeNode5);
-        treeNode4.nodes.add(treeNode6);
-        treeNode4.nodes.add(treeNode7);
-        treeNode7.nodes.add(treeNode8);
+
+        //treeNode1.left = treeNode2;
+        //treeNode1.right = treeNode3;
+        treeNode2.left = treeNode4;
+        treeNode2.right = treeNode5;
+
+        treeNode3.left = treeNode6;
+
+        treeNode6.left = treeNode7;
 
 
-        List<Integer> firstNum = Traverse.getFirstNum(treeNode1);
+        new BinaryTreePaths_257().binaryTreePaths(treeNode1);
+
 
     }
 

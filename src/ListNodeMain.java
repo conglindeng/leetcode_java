@@ -1,4 +1,4 @@
-import leetcode.easy.ReverseList_206;
+import leetcode.easy.IsPalindrome_234;
 import struct.ListNode;
 
 public class ListNodeMain {
@@ -11,8 +11,8 @@ public class ListNodeMain {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
+        ListNode node4 = new ListNode(2);
+        ListNode node5 = new ListNode(1);
         ListNode node6 = new ListNode(6);
         ListNode node7 = new ListNode(7);
         ListNode node8 = new ListNode(8);
