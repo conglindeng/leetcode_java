@@ -1,10 +1,7 @@
 package newcode;
 
-import javafx.scene.layout.Priority;
-
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 
 public class NC90_MinStack {
     Deque<Integer> work;
