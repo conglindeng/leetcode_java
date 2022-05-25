@@ -32,7 +32,7 @@ public class FindRightInterval_436 {
                 res[idxMap.get(intervals[i][0])] = idxMap.get(m);
             }
         }
-        return res;
+         return res;
     }
 
     /**
