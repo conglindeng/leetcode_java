@@ -3,6 +3,7 @@ package leetcode.middle;
 import struct.TreeNode;
 
 public class DeleteNode_450 {
+
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {
             return null;
