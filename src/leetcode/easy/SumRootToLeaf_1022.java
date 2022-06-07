@@ -1,5 +1,7 @@
 package leetcode.easy;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import struct.TreeNode;
 
 /**
@@ -50,6 +52,34 @@ public class SumRootToLeaf_1022 {
         return lrd(root.left, val) + lrd(root.right, val);
     }
 
+
+    public int sumRootToLeaf_Optimize_Iteration(TreeNode root) {
+        int val = 0;
+        int res = 0;
+        Deque<TreeNode> work = new LinkedList<>();
+        TreeNode cur = root;
+        TreeNode pre = null;
+        while (cur != null || !work.isEmpty()) {
+            while (cur != null) {
+                val = (val << 1) | cur.val;
+                work.push(cur);
+                cur = cur.left;
+            }
+            cur = work.peek();
+            if (cur.right == null || cur.right == pre) {
+                if (cur.right == null && cur.left == null) {
+                    res += val;
+                }
+                val >>= 1;
+                work.poll();
+                pre = cur;
+                cur = null;
+            } else {
+                cur = cur.right;
+            }
+        }
+        return res;
+    }
 
 
 }

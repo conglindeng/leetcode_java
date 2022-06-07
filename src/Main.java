@@ -4,6 +4,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.FindKthNumber_668;
 import leetcode.difficult.MyCalendarThree_732;
+import leetcode.middle.MinEatingSpeed_875;
 
 
 public class Main {
@@ -30,6 +31,9 @@ public class Main {
         book = myCalendarThree.book(5, 15); // 返回 3 ，剩下的日程安排的最大 k 次预订是 3 次预订。
         book = myCalendarThree.book(5, 10); // 返回 3
         book = myCalendarThree.book(25, 55); // 返回 3
+
+        int i = new MinEatingSpeed_875().minEatingSpeed(new int[]{3,6,7,11}, 8);
+
         System.out.println();
 
 
