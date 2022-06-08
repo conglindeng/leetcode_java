@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.FindKthNumber_668;
 import leetcode.difficult.MyCalendarThree_732;
-import leetcode.middle.MinEatingSpeed_875;
+import leetcode.easy.WordPattern_290;
 
 
 public class Main {
@@ -32,7 +32,9 @@ public class Main {
         book = myCalendarThree.book(5, 10); // 返回 3
         book = myCalendarThree.book(25, 55); // 返回 3
 
-        int i = new MinEatingSpeed_875().minEatingSpeed(new int[]{3,6,7,11}, 8);
+        new WordPattern_290().wordPattern("abba","cat cat cat cat");
+
+
 
         System.out.println();
 
