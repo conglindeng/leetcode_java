@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.FindKthNumber_668;
 import leetcode.difficult.MyCalendarThree_732;
-import leetcode.easy.WordPattern_290;
+import leetcode.middle.MinFlipsMonoIncr_926;
 
 
 public class Main {
@@ -32,9 +32,7 @@ public class Main {
         book = myCalendarThree.book(5, 10); // 返回 3
         book = myCalendarThree.book(25, 55); // 返回 3
 
-        new WordPattern_290().wordPattern("abba","cat cat cat cat");
-
-
+        new MinFlipsMonoIncr_926().minFlipsMonoIncr("010110");
 
         System.out.println();
 
