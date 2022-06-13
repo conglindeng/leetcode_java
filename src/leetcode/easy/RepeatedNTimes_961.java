@@ -4,7 +4,6 @@ import java.util.Random;
 
 /**
  * @ClassName RepeatedNTimes_961
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/21 22:08
  * @Version 1.0

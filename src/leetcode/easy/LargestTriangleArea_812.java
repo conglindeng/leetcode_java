@@ -2,7 +2,6 @@ package leetcode.easy;
 
 /**
  * @ClassName LargestTriangleArea_812
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/15 22:38
  * @Version 1.0

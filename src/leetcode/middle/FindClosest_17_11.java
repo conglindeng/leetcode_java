@@ -2,7 +2,6 @@ package leetcode.middle;
 
 /**
  * @ClassName FindClosest_17_11
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/27 09:31
  * @Version 1.0

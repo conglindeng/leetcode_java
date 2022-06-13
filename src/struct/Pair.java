@@ -2,7 +2,6 @@ package struct;
 
 /**
  * @ClassName Pair
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/20 15:19
  * @Version 1.0

@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @ClassName FfindRightInterval_436
- * @Description TODO
+ 
  * @Version 1.0
  */
 public class FindRightInterval_436 {

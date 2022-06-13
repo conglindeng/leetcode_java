@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * @ClassName Makesquare_473
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/6/1 09:48
  * @Version 1.0

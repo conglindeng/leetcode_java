@@ -2,7 +2,6 @@ package leetcode.easy;
 
 /**
  * @ClassName RemoveOuterParentheses_1021
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/28 15:52
  * @Version 1.0

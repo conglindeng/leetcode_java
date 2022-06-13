@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @ClassName MinMoves2_462
- * @Description TODO
+ 
  * @Version 1.0
  */
 public class MinMoves2_462 {

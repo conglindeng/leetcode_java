@@ -5,7 +5,6 @@ import java.util.Map;
 
 /**
  * @ClassName IsAlienSorted_953
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/17 09:19
  * @Version 1.0

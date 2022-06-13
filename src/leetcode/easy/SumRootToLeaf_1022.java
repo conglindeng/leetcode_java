@@ -6,7 +6,6 @@ import struct.TreeNode;
 
 /**
  * @ClassName SumRootToLeaf_1022
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/30 09:11
  * @Version 1.0

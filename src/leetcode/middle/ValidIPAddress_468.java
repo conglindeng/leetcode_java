@@ -2,7 +2,6 @@ package leetcode.middle;
 
 /**
  * @ClassName ValidIPAddress_468
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/29 18:52
  * @Version 1.0

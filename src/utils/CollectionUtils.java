@@ -6,7 +6,6 @@ import java.util.function.Function;
 
 /**
  * @ClassName CollectionUtils
- * @Description TODO
  * @Author conglindeng
  * @Version 1.0
  */

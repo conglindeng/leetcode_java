@@ -4,7 +4,6 @@ import struct.TreeNode;
 
 /**
  * @ClassName IsUnivalTree_965
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/24 12:16
  * @Version 1.0

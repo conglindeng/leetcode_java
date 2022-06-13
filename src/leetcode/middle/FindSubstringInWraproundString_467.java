@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * @ClassName FindSubstringInWraproundString_467
- * @Description TODO
  * @Author conglindeng
  * @Date 2022/5/25 20:31
  * @Version 1.0
