@@ -4,6 +4,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.FindKthNumber_668;
 import leetcode.difficult.MyCalendarThree_732;
+import leetcode.difficult.SmallestDistancePair_719;
 import leetcode.middle.MinFlipsMonoIncr_926;
 
 
@@ -33,6 +34,8 @@ public class Main {
         book = myCalendarThree.book(25, 55); // 返回 3
 
         new MinFlipsMonoIncr_926().minFlipsMonoIncr("010110");
+
+        new SmallestDistancePair_719().smallestDistancePair(new int[]{1, 3, 2}, 1);
 
         System.out.println();
 
