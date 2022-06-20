@@ -1,5 +1,6 @@
 package leetcode.middle;
 
+import java.util.Map.Entry;
 import struct.TreeNode;
 
 import java.util.ArrayList;
@@ -62,5 +63,63 @@ public class FindFrequentTreeSum_508 {
         res = Math.max(integer, res);
         info.put(curSum, integer);
     }
+
+
+
+    private  Map<Integer, Integer> valCount = new HashMap<>();
+    private  Integer max = -1;
+
+
+    public  int[] findFrequentTreeSum_again(TreeNode root) {
+        if (root == null) {
+            return new int[0];
+        }
+        if (root.left == null && root.right == null) {
+            return new int[]{root.val};
+        }
+        getSum(root);
+        List<Integer> res = new ArrayList<>();
+        for (Entry<Integer, Integer> entry : valCount.entrySet()) {
+            Integer v = entry.getValue();
+            Integer k = entry.getKey();
+            if (v > max) {
+                res = new ArrayList<>();
+                res.add(k);
+                max = v;
+            } else if (v.equals(max)) {
+                res.add(k);
+            }
+        }
+        int[] copy = new int[res.size()];
+        for (int i = 0; i < res.size(); i++) {
+            copy[i] = res.get(i);
+        }
+        return copy;
+    }
+
+
+    private  int getSum(TreeNode root) {
+        if (root.left == null && root.right == null) {
+            //到叶子节点了
+            valCount.put(root.val, valCount.getOrDefault(root.val, 0) + 1);
+            return root.val;
+        }
+        int leftSum = 0;
+        if (root.left != null) {
+            leftSum += getSum(root.left);
+            //valCount.put(leftSum, valCount.getOrDefault(leftSum, 0) + 1);
+        }
+        int rightSum = 0;
+        if (root.right != null) {
+            rightSum += getSum(root.right);
+            //valCount.put(rightSum, valCount.getOrDefault(rightSum, 0) + 1);
+
+        }
+        int i = leftSum + rightSum + root.val;
+        valCount.put(i, valCount.getOrDefault(i, 0) + 1);
+        return i;
+    }
+
+
 
 }
