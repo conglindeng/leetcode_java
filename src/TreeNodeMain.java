@@ -1,3 +1,4 @@
+import leetcode.middle.FindBottomLeftValue_513;
 import struct.TreeNode;
 
 public class TreeNodeMain {
@@ -14,13 +15,15 @@ public class TreeNodeMain {
         TreeNode treeNode9 = new TreeNode(9);
 
         treeNode1.left = treeNode2;
-        //treeNode1.le = treeNode3;
-        treeNode2.left = treeNode4;
+        treeNode1.right = treeNode3;
+        //treeNode2.left = treeNode4;
         //treeNode4.left = treeNode5;
 
-        //treeNode3.right = treeNode6;
+        treeNode3.right = treeNode6;
 
-        //treeNode6.left = treeNode7;
+        treeNode6.left = treeNode7;
+
+        int bottomLeftValue = new FindBottomLeftValue_513().findBottomLeftValue(treeNode1);
 
     }
 
