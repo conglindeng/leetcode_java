@@ -1,0 +1,20 @@
+{
+  "required": false,
+  "packageName": "com.custom.platform.sdk.pojo.response",
+  "className": "BaseResult",
+  "genericInfo": [
+    {
+      "required": false,
+      "packageName": "java.lang",
+      "className": "String",
+      "genericDefine": [],
+      "fields": [],
+      "type": 0
+    }
+  ],
+  "genericDefine": [
+    "T"
+  ],
+  "fields": [],
+  "type": 0
+}

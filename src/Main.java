@@ -1,12 +1,10 @@
-import cache.LFUCache;
-import java.lang.reflect.Field;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.MyCalendarThree_732;
 import leetcode.difficult.RangeModule_715;
-import leetcode.middle.FindMinHeightTrees_310;
+import leetcode.middle.WiggleSort_324;
 
 
 public class Main {
@@ -21,8 +19,6 @@ public class Main {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
-        new FindMinHeightTrees_310().findMinHeightTrees(6, new int[][]{{3, 0}, {3, 1}, {3, 2}, {3, 4}, {5, 4}});
-
         MyCalendarThree_732 myCalendarThree = new MyCalendarThree_732();
         int book = myCalendarThree.book(10, 20);// 返回 1 ，第一个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。
         book = myCalendarThree.book(0, 60); // 返回 1 ，第二个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。
@@ -33,8 +29,9 @@ public class Main {
 
         RangeModule_715 rangeModule_715 = new RangeModule_715();
 
-        Class<LFUCache> lfuCacheClass = LFUCache.class;
-        Field[] declaredFields = lfuCacheClass.getDeclaredFields();
+        // new AlienOrder_Offer_114().alienOrder(new String[]{"wrt", "wrtkj"});
+
+        new WiggleSort_324().wiggleSort(new int[]{1, 5, 1, 1, 6, 4});
 
         System.out.println();
 
