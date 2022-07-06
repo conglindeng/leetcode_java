@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.MyCalendarThree_732;
 import leetcode.difficult.RangeModule_715;
-import leetcode.middle.WiggleSort_324;
+import leetcode.middle.NextGreaterElement_556;
 
 
 public class Main {
@@ -31,7 +31,7 @@ public class Main {
 
         // new AlienOrder_Offer_114().alienOrder(new String[]{"wrt", "wrtkj"});
 
-        new WiggleSort_324().wiggleSort(new int[]{1, 5, 1, 1, 6, 4});
+        new NextGreaterElement_556().nextGreaterElement(12443322);
 
         System.out.println();
 
