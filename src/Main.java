@@ -1,10 +1,10 @@
-import algorithm.KMP;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.MyCalendarThree_732;
 import leetcode.difficult.RangeModule_715;
+import leetcode.middle.MyCalendarTwo_WithAdjacentDifference_731;
 
 
 public class Main {
@@ -29,32 +29,11 @@ public class Main {
 
         RangeModule_715 rangeModule_715 = new RangeModule_715();
 
-        // new AlienOrder_Offer_114().alienOrder(new String[]{"wrt", "wrtkj"});
+        // new AlienOrder_Offer_114().alienOrder(new String[]{"w、rt", "wrtkj"});
 
-        KMP ababc = new KMP("ababc");
-        int abab = ababc.search("abababc");
-
-        oddCells(2, 2, new int[][]{{1, 1}, {0, 1}});
+        MyCalendarTwo_WithAdjacentDifference_731 calender = new MyCalendarTwo_WithAdjacentDifference_731();
 
         System.out.println();
 
     }
-
-
-    public static int oddCells(int m, int n, int[][] indices) {
-        int[] row = new int[m];
-        int[] col = new int[n];
-        for (int[] index : indices) {
-            row[index[0]]++;
-            col[index[1]]++;
-        }
-        int res = 0;
-        for (int i = 0; i < m + n; i++) {
-            if ((row[i / m] + col[(i % m)]) % 2 != 0) {
-                res++;
-            }
-        }
-        return res;
-    }
-
 }
