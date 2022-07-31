@@ -1,16 +1,16 @@
-import leetcode.middle.FindBottomLeftValue_513;
+import leetcode.middle.PruneTree_814;
 import struct.TreeNode;
 
 public class TreeNodeMain {
 
     public static void main(String[] args) {
-        TreeNode treeNode1 = new TreeNode(5);
-        TreeNode treeNode2 = new TreeNode(14);
-        TreeNode treeNode3 = new TreeNode(-3);
+        TreeNode treeNode1 = new TreeNode(0);
+        TreeNode treeNode2 = new TreeNode(1);
+        TreeNode treeNode3 = new TreeNode(0);
         TreeNode treeNode4 = new TreeNode(1);
         TreeNode treeNode5 = new TreeNode(9);
-        TreeNode treeNode6 = new TreeNode(1);
-        TreeNode treeNode7 = new TreeNode(7);
+        TreeNode treeNode6 = new TreeNode(0);
+        TreeNode treeNode7 = new TreeNode(0);
         TreeNode treeNode8 = new TreeNode(8);
         TreeNode treeNode9 = new TreeNode(9);
 
@@ -23,7 +23,9 @@ public class TreeNodeMain {
 
         treeNode6.left = treeNode7;
 
-        int bottomLeftValue = new FindBottomLeftValue_513().findBottomLeftValue(treeNode1);
+        TreeNode treeNode = new PruneTree_814().pruneTree(treeNode1);
+
+        System.out.println();
 
     }
 

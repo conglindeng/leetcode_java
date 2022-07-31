@@ -1,10 +1,12 @@
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.difficult.MyCalendarThree_732;
 import leetcode.difficult.RangeModule_715;
-import leetcode.middle.MyCalendarTwo_WithAdjacentDifference_731;
+import leetcode.difficult.Skiplist_120;
+import leetcode.middle.ValidSquare_593;
 
 
 public class Main {
@@ -31,9 +33,30 @@ public class Main {
 
         // new AlienOrder_Offer_114().alienOrder(new String[]{"w、rt", "wrtkj"});
 
-        MyCalendarTwo_WithAdjacentDifference_731 calender = new MyCalendarTwo_WithAdjacentDifference_731();
+        List<String> data = null;
+
+        Skiplist_120 skiplist_120 = new Skiplist_120();
+        skiplist_120.add(1);
+        skiplist_120.add(3);
+        skiplist_120.add(4);
+        skiplist_120.add(6);
+        skiplist_120.add(5);
+        skiplist_120.add(9);
+        skiplist_120.add(2);
+
+        skiplist_120.erase(4);
+
+        boolean b = new ValidSquare_593().validSquare(new int[]{0, 0}, new int[]{1, 1}, new int[]{1, 0},
+            new int[]{0, 2});
 
         System.out.println();
 
     }
 }
+
+//todo list:
+//1.https://leetcode.cn/problems/count-different-palindromic-subsequences/
+//2.https://leetcode.cn/problems/Jf1JuT/solution/wai-xing-wen-zi-dian-by-leetcode-solutio-to66/ topology method
+//3.https://leetcode.cn/problems/substring-with-concatenation-of-all-words/
+//4.https://leetcode.cn/problems/minimum-number-of-refueling-stops/
+//5.https://leetcode.cn/problems/parse-lisp-expression/solution/lisp-yu-fa-jie-xi-by-leetcode-solution-zycb/
