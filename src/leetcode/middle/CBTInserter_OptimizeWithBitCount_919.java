@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import struct.TreeNode;
 
-class CBTInserter_OptimizeWithBitCount_919 {
+public class CBTInserter_OptimizeWithBitCount_919 {
 
     TreeNode root;
     int count;
@@ -28,8 +28,22 @@ class CBTInserter_OptimizeWithBitCount_919 {
 
     public int insert(int val) {
         TreeNode newNode = new TreeNode(val);
-        //todo : dcl
-        return -1;
+        count++;
+        int i = 31 - Integer.numberOfLeadingZeros(count);
+        TreeNode temp = root;
+        for (int j = i - 1; j > 0; j--) {
+            if (((count >> j) & 1) == 0) {
+                temp = temp.left;
+            } else {
+                temp = temp.right;
+            }
+        }
+        if ((count & 1) == 1) {
+            temp.right = newNode;
+        } else {
+            temp.left = newNode;
+        }
+        return temp.val;
     }
 
     public TreeNode get_root() {

@@ -1,4 +1,4 @@
-import leetcode.middle.PruneTree_814;
+import leetcode.middle.CBTInserter_OptimizeWithBitCount_919;
 import struct.TreeNode;
 
 public class TreeNodeMain {
@@ -23,7 +23,13 @@ public class TreeNodeMain {
 
         treeNode6.left = treeNode7;
 
-        TreeNode treeNode = new PruneTree_814().pruneTree(treeNode1);
+        CBTInserter_OptimizeWithBitCount_919 test = new CBTInserter_OptimizeWithBitCount_919(treeNode4);
+        test.insert(2);
+        test.insert(3);
+        test.insert(4);
+        test.insert(5);
+        test.insert(6);
+        test.insert(6);
 
         System.out.println();
 

@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import leetcode.difficult.MyCalendarThree_732;
 import leetcode.difficult.RangeModule_715;
 import leetcode.difficult.Skiplist_120;
-import leetcode.middle.ValidSquare_593;
+import leetcode.easy.MinStartValue_1413;
 
 
 public class Main {
@@ -46,11 +46,9 @@ public class Main {
 
         skiplist_120.erase(4);
 
-        boolean b = new ValidSquare_593().validSquare(new int[]{0, 0}, new int[]{1, 1}, new int[]{1, 0},
-            new int[]{0, 2});
+        new MinStartValue_1413().minStartValue(new int[]{-3,2,-3,4,2});
 
         System.out.println();
-
     }
 }
 
