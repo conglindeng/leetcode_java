@@ -3,7 +3,7 @@ package leetcode.easy;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class MyStack_225 {
+public class MyStack_225 {
 
     Queue<Integer> first;
     Queue<Integer> second;

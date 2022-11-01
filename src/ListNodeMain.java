@@ -2,6 +2,7 @@ import leetcode.easy.IsPalindrome_234;
 import struct.ListNode;
 
 public class ListNodeMain {
+
     public static void main(String[] args) {
         ListNode head = new ListNode(1, new ListNode(1, new ListNode(3, new ListNode(3, new ListNode(5)))));
 
@@ -26,7 +27,6 @@ public class ListNodeMain {
         node7.next=node8;
         node8.next=node9;
 
-
         //region make a intersect
 /*        ListNode node10=new ListNode(10);
         ListNode node11=new ListNode(11);
@@ -38,5 +38,19 @@ public class ListNodeMain {
         //endregion
         new SwapPairs_24().swapPairs(node1);
         System.out.println();
+    }
+
+
+    public void t(ListNode node) {
+        ListNode s = node.next;
+        while (s != null) {
+            if(s.val <= 0){
+                break;
+            }
+            s = s.next;
+        }
+        if (s != null) {
+            //unpark
+        }
     }
 }
