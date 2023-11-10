@@ -1,6 +1,10 @@
 package jvmtest;
 
 
+import java.net.URL;
+import java.security.CodeSource;
+import java.security.ProtectionDomain;
+
 public class AllotOnStack {
 
     public static void main(String[] args) {
@@ -17,5 +21,19 @@ public class AllotOnStack {
 //        User user = new User();
 //        user.setId(1);
 //        user.setName("blueStarWei");
+    }
+
+
+    private void getClassLocation(){
+        //        Class clz= StringUtils.class;
+        Class clz= String.class;
+        ProtectionDomain protectionDomain =clz.getProtectionDomain();
+        CodeSource codeSource = protectionDomain.getCodeSource();
+        if (codeSource== null) {
+            System.out.println(clz.getSimpleName()+"是系统类，无法获取CodeSource对象");
+            return;
+        }
+        URL location = codeSource.getLocation();
+        System.out.println(location);
     }
 }

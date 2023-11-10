@@ -22,10 +22,11 @@ public class ListNodeMain {
         node2.next = node3;
         node3.next = node4;
 
+        node4.next = node5;
 //        node5.next=node6;
-        node6.next=node7;
-        node7.next=node8;
-        node8.next=node9;
+//        node6.next=node7;
+//        node7.next=node8;
+//        node8.next=node9;
 
         //region make a intersect
 /*        ListNode node10=new ListNode(10);
@@ -36,7 +37,9 @@ public class ListNodeMain {
         node12.next=node6;
         System.out.println(TwoPointer.findIntersectingNode_2(node1, node10).val);*/
         //endregion
-        new SwapPairs_24().swapPairs(node1);
+
+        new IsPalindrome_234().isPalindrome(node1);
+
         System.out.println();
     }
 

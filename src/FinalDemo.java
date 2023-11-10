@@ -15,6 +15,9 @@ public class FinalDemo {
 
     public static void main(String[] args) {
         H2O h2O = new H2O();
+        H2O h2O_2 = new H2O();
+        System.out.println(h2O_2.hashCode());
+        System.out.println(h2O.hashCode());
         for (int i = 0; i < 20; i++) {
             pool.submit(() -> {
                 h2O.oxygen(() -> {
@@ -32,6 +35,7 @@ public class FinalDemo {
 }
 
 class H2O1 {
+
     //氧原子的数量
     private final AtomicInteger oxygen = new AtomicInteger(0);
     //氢原子的数量
@@ -86,7 +90,6 @@ class H2O1 {
 }
 
 
-
 class H2O {
 
     private volatile int hydrogen;
@@ -99,8 +102,8 @@ class H2O {
     public void hydrogen(Runnable releaseHydrogen) {
 
         // releaseHydrogen.run() outputs "H". Do not change or remove this line.
-        synchronized (this){
-            if (hydrogen == 2){
+        synchronized (this) {
+            if (hydrogen == 2) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
@@ -109,7 +112,7 @@ class H2O {
             }
             hydrogen++;
             releaseHydrogen.run();
-            if (hydrogen == 2 && oxygen == 1){
+            if (hydrogen == 2 && oxygen == 1) {
                 hydrogen = 0;
                 oxygen = 0;
                 notifyAll();
@@ -117,11 +120,11 @@ class H2O {
         }
     }
 
-    public void oxygen(Runnable releaseOxygen)  {
+    public void oxygen(Runnable releaseOxygen) {
 
         // releaseOxygen.run() outputs "O". Do not change or remove this line.
-        synchronized (this){
-            if (oxygen == 1){
+        synchronized (this) {
+            if (oxygen == 1) {
                 try {
                     wait();//O在waitSet里，释放锁
                     //sync
@@ -131,7 +134,7 @@ class H2O {
             }
             oxygen++;
             releaseOxygen.run();
-            if (hydrogen == 2 && oxygen == 1){
+            if (hydrogen == 2 && oxygen == 1) {
                 hydrogen = 0;
                 oxygen = 0;
                 notifyAll();
