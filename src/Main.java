@@ -1,3 +1,4 @@
+import essay.PrintNumberByTurn;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -13,19 +14,11 @@ public class Main {
         new LinkedBlockingDeque<>(3), r -> new Thread(r, "myPool")
     );
 
-    private  static ThreadLocal<String> cache = new ThreadLocal<>();
-
     public static void main(String[] args) throws Exception {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
-
-        cache.set("1111");
-        cache =null;
-        System.gc();
-
-        Thread.sleep(2000L);
-        System.out.println(cache.get());
+        new PrintNumberByTurn().printNumberByTurn(10000);
 
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
