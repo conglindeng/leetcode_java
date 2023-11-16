@@ -11,9 +11,7 @@ public class CyclicBarrierTest {
                 System.out.println(Thread.currentThread().getName()+" running ");
                 try {
                     cyclicBarrier.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
+                } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
             },"thread_"+i).start();
