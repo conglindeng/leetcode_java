@@ -1,3 +1,4 @@
+import essay.LRU_Basic;
 import essay.PrintNumberByTurn_Condition;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -23,6 +24,8 @@ public class Main {
 //        new PrintNumberByTurn_Semaphore().printNumberByTurn(100);
         new PrintNumberByTurn_Condition().printNumberByTurn(10);
 
+        LRU_Basic lruBasic = new LRU_Basic(3);
+        lruBasic.put("11","11");
 
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
