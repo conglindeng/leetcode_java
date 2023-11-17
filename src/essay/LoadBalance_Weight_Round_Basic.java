@@ -3,14 +3,14 @@ package essay;
 import java.util.LinkedList;
 import javafx.util.Pair;
 
-public class LoadBalance_Weight_Round {
+public class LoadBalance_Weight_Round_Basic {
 
     private static final Object lock = new Object();
     private final Pair<String, Integer>[] initialData;
 
     private LinkedList<String> work;
 
-    public LoadBalance_Weight_Round(Pair<String, Integer>[] configs) {
+    public LoadBalance_Weight_Round_Basic(Pair<String, Integer>[] configs) {
         initialData = configs;
         nextRound();
     }
