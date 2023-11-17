@@ -1,8 +1,9 @@
-import essay.PrintNumberByTurn;
+import essay.PrintNumberByTurn_Condition;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
 
 
 public class Main {
@@ -18,7 +19,10 @@ public class Main {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
-        new PrintNumberByTurn().printNumberByTurn(10000);
+//        new PrintNumberByTurn().printNumberByTurn(10000);
+//        new PrintNumberByTurn_Semaphore().printNumberByTurn(100);
+        new PrintNumberByTurn_Condition().printNumberByTurn(10);
+
 
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();

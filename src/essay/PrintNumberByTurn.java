@@ -10,43 +10,37 @@ public class PrintNumberByTurn {
     public void printNumberByTurn(int n) {
         final int[] i = {1};
         new Thread(() -> {
-            for (; ; ) {
+            while (i[0] < n) {
                 synchronized (lock) {
-                    if(i[0]>=n){
-                        break;
-                    }
-                    if (i[0] % 2 != 1) {
+                    while (i[0] % 2 != 1) {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
-                    } else {
-                        System.out.println(Thread.currentThread().getName() + i[0]);
-                        i[0] +=1;
-                        lock.notifyAll();
                     }
+                    System.out.println(Thread.currentThread().getName() + i[0]);
+                    i[0] += 1;
+                    lock.notifyAll();
+
                 }
             }
         }, "print odd number").start();
 
         new Thread(() -> {
-            for (; ; ) {
+            while (i[0] < n) {
                 synchronized (lock) {
-                    if(i[0]>=n){
-                        break;
-                    }
-                    if (i[0] % 2 != 0) {
+                    while (i[0] % 2 != 0) {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
-                    } else {
-                        System.out.println(Thread.currentThread().getName() + i[0]);
-                        i[0] +=1;
-                        lock.notifyAll();
                     }
+                    System.out.println(Thread.currentThread().getName() + i[0]);
+                    i[0] += 1;
+                    lock.notifyAll();
+
                 }
             }
         }, "print even number").start();
