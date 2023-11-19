@@ -1,9 +1,9 @@
-import essay.PrintNumberByTurn_Condition;
+import essay.QuickSort;
+import java.util.Arrays;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
 
 
 public class Main {
@@ -18,12 +18,11 @@ public class Main {
     public static void main(String[] args) throws Exception {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
-
-//        new PrintNumberByTurn().printNumberByTurn(10000);
-//        new PrintNumberByTurn_Semaphore().printNumberByTurn(100);
-        new PrintNumberByTurn_Condition().printNumberByTurn(10);
-
-
+//7, 1, 4, 4
+        //12, 4, 1, 13, 17, 18
+        int[] ints = {13, 19, 11, 12};
+        new QuickSort().quickSort(ints);
+        System.out.println(Arrays.toString(ints));
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
 //        skiplist_120.add(1);

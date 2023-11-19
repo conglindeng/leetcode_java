@@ -1,5 +1,9 @@
 package essay;
 
+//        new PrintNumberByTurn().printNumberByTurn(10000);
+//        new PrintNumberByTurn_Semaphore().printNumberByTurn(100);
+//        new PrintNumberByTurn_Condition().printNumberByTurn(10);
+
 /**
  * 写两个线程打印 1-n，一个线程打印奇数，一个线程打印偶数
  */
