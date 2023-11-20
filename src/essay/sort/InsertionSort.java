@@ -1,4 +1,4 @@
-package essay;
+package essay.sort;
 
 public class InsertionSort {
 

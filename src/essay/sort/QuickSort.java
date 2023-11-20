@@ -1,10 +1,4 @@
-package essay;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+package essay.sort;
 
 /**
  * 优化： 1、三数取中法 上面的代码思想都是直接拿序列的最后一个值作为枢轴，如果最后这个值刚好是整段序列最大或者最小的值，那么这次划分就是没意义的。
@@ -20,7 +14,7 @@ public class QuickSort {
      *  3.left range and right range do 1,2 steps again
      */
     public void quickSort(int[] nums) {
-        doQuickSort_(nums, 0, nums.length - 1);
+        doQuickSort_Hole(nums, 0, nums.length - 1);
     }
 
     private void doQuickSort(int[] nums, int left, int right) {
@@ -51,7 +45,7 @@ public class QuickSort {
     }
 
 
-    private void doQuickSort_(int[] nums, int left, int right) {
+    private void doQuickSort_Hole(int[] nums, int left, int right) {
         if (left >= right) {
             return;
         }
@@ -69,39 +63,8 @@ public class QuickSort {
             nums[l] = nums[r];
         }
         nums[r] = key;
-        doQuickSort_(nums, left, r - 1);
-        doQuickSort_(nums, r + 1, right);
+        doQuickSort_Hole(nums, left, r - 1);
+        doQuickSort_Hole(nums, r + 1, right);
 
-    }
-
-
-    public static void main(String[] args) {
-        Random random = new Random();
-        QuickSort quickSort = new QuickSort();
-        InsertionSort insertionSort = new InsertionSort();
-        int size = 4 + random.nextInt(5);
-        for (int i = 0; i < 1000; i++) {
-            List<Integer> nums = new ArrayList<>();
-            int[] numArray = new int[size];
-            for (int j = 0; j < size; j++) {
-                int e = random.nextInt(20);
-                nums.add(e);
-                numArray[j] = e;
-            }
-            ArrayList<Integer> copy = new ArrayList<>(nums);
-            System.out.println(copy);
-            Collections.sort(nums);
-//            quickSort.quickSort(numArray);
-            insertionSort.insertionSort(numArray);
-            for (int j = 0; j < size; j++) {
-                if (nums.get(j) != numArray[j]) {
-                    System.out.println("source: " + copy);
-                    System.out.println(nums);
-                    System.out.println(Arrays.toString(numArray));
-                    throw new RuntimeException();
-                }
-            }
-        }
-        System.out.println(" Perfect sort ");
     }
 }

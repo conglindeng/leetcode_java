@@ -1,4 +1,4 @@
-import essay.QuickSort;
+import essay.sort.MergeSort;
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -21,7 +21,7 @@ public class Main {
 //7, 1, 4, 4
         //12, 4, 1, 13, 17, 18
         int[] ints = {13, 19, 11, 12};
-        new QuickSort().quickSort(ints);
+        int[] ints1 = new MergeSort().mergeSort(ints);
         System.out.println(Arrays.toString(ints));
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
