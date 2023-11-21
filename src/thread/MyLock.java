@@ -2,6 +2,7 @@ package thread;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
+//todo:dcl
 public class MyLock extends AbstractQueuedSynchronizer {
 
     @Override

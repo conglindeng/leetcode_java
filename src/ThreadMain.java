@@ -1,5 +1,6 @@
 import essay.LoadBalance_Weight_Round_Basic;
 import essay.LoadBalance_Weight_Round_Sleek;
+import essay.ProducerAndConsumer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +15,39 @@ public class ThreadMain {
     private static final Object lock_b = new Object();
 
     public static void main(String[] args) throws InterruptedException {
-        weightRoundSleekLoadBalance();
+
+    }
+
+
+    public static void produceAndConsumerTest() throws InterruptedException {
+        ProducerAndConsumer producerAndConsumer = new ProducerAndConsumer(5);
+        int count = 1000;
+        List<Integer> objects = Collections.synchronizedList(new ArrayList<>(count));
+        for (int i = 0; i < count; i++) {
+            int finalI = i;
+            new Thread(() -> {
+                producerAndConsumer.enQueue(finalI);
+            }, " producer " + i).start();
+        }
+        CountDownLatch countDownLatch=new CountDownLatch(5);
+        for (int i = 0; i < 5; i++) {
+            new Thread(() -> {
+                for (int j = 0; j < 200; j++) {
+                    int val = producerAndConsumer.deQueue();
+                    objects.add(val);
+                    System.out.println(" poll out : " + val);
+                }
+                countDownLatch.countDown();
+            }, "consumer " + i).start();
+        }
+        countDownLatch.await();
+        Collections.sort(objects);
+        for (int i = 0; i < count; i++) {
+            if (i != objects.get(i)) {
+                throw new RuntimeException("there is some thing wrong");
+            }
+        }
+        System.out.println(" perfect ");
     }
 
     public static void deadLockTest() throws InterruptedException {

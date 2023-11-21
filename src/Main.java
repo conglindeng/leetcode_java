@@ -1,5 +1,9 @@
-import essay.sort.MergeSort;
-import java.util.Arrays;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.ServiceLoader;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -18,11 +22,14 @@ public class Main {
     public static void main(String[] args) throws Exception {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
-//7, 1, 4, 4
-        //12, 4, 1, 13, 17, 18
-        int[] ints = {13, 19, 11, 12};
-        int[] ints1 = new MergeSort().mergeSort(ints);
-        System.out.println(Arrays.toString(ints));
+
+        ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,Thread.currentThread().getContextClassLoader());
+        Iterator<InputStream> iterator = inputStreams.iterator();
+        while(iterator.hasNext()){
+            InputStream next = iterator.next();
+            next.read();
+        }
+
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
 //        skiplist_120.add(1);
@@ -36,6 +43,14 @@ public class Main {
 //        skiplist_120.erase(4);
 //
         //endregion
+    }
+
+    private static void getDateAndPrint() {
+        Calendar instance = Calendar.getInstance();
+        instance.add(Calendar.DAY_OF_YEAR, -1);
+        Date time = instance.getTime();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(simpleDateFormat.format(time));
     }
 }
 
