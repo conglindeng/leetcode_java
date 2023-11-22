@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import limiting.model.Request;
 
 public class FixedWindow implements RequestLimit {
 
@@ -36,9 +37,10 @@ public class FixedWindow implements RequestLimit {
 
     // guaranteed by synchronized
     @Override
-    public synchronized boolean requestLimit(String IP) {
+    public synchronized boolean requestLimit(Request request) {
         // how to reduce race ?
         // todo:dcl
+        String IP = request.getIP();
         long windowIndex = getWindowIndex();
         LimitWindow curCount = requestCount.getOrDefault(IP, new LimitWindow(getWindowIndex(), 0));
         if (windowIndex < curCount.getWindowIndex()) {

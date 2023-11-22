@@ -15,7 +15,9 @@ public class SortTest {
         BubbleSort bubbleSort = new BubbleSort();
         SelectionSort selectionSort = new SelectionSort();
         MergeSort mergeSort = new MergeSort();
-        int size = 4 + random.nextInt(5);
+        ShellSort shellSort = new ShellSort();
+
+        int size = 40 + random.nextInt(5);
         for (int i = 0; i < 1000; i++) {
             List<Integer> nums = new ArrayList<>();
             int[] numArray = new int[size];
@@ -31,7 +33,8 @@ public class SortTest {
 //            insertionSort.insertionSort(numArray);
 //            bubbleSort.bubbleSort(numArray);
 //            selectionSort.selectionSort(numArray);
-            numArray = mergeSort.mergeSort(numArray);
+//            numArray = mergeSort.mergeSort(numArray);
+            shellSort.shellSort(numArray);
             for (int j = 0; j < size; j++) {
                 if (nums.get(j) != numArray[j]) {
                     System.out.println("source: " + copy);

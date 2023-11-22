@@ -3,15 +3,17 @@ package limiting;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import limiting.model.Request;
 
 public class LimitingTest {
 
     public static void main(String[] args) throws Throwable {
 
-
         FixedWindow fixedWindow = new FixedWindow(10, 1000L, TimeUnit.MILLISECONDS);
 
         SlidingWindow slidingWindow = new SlidingWindow(2000L, 10);
+
+        TokenBucket tokenBucket = new TokenBucket(10, 100L);
 
         int threadCount = 50;
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);
@@ -25,7 +27,7 @@ public class LimitingTest {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    slidingWindow.requestLimit("192.168.0.1");
+                    tokenBucket.requestLimit(new Request("111", "192.168.0.1"));
                 }
                 countDownLatch.countDown();
             }).start();

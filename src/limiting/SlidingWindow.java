@@ -6,6 +6,7 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import limiting.model.Request;
 
 public class SlidingWindow implements RequestLimit {
 
@@ -23,7 +24,8 @@ public class SlidingWindow implements RequestLimit {
     }
 
     @Override
-    public synchronized boolean requestLimit(String IP) {
+    public synchronized boolean requestLimit(Request request) {
+        String IP = request.getIP();
         Instant arrivedTime = Instant.now();
         clearAncientRequest(IP, arrivedTime);
         //addLast
@@ -51,8 +53,6 @@ public class SlidingWindow implements RequestLimit {
             instants.pollFirst();
         }
     }
-
-
 
 
 }

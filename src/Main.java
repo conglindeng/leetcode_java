@@ -1,3 +1,4 @@
+import essay.sort.ShellSort;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,10 +26,14 @@ public class Main {
         System.out.println(uuid.toString().replace("-", ""));
         new MinPathCost_2304().minPathCost(new int[][]{{5, 3}, {4, 0}, {2, 1}}, new int[][]{
 
-            {9,8},{1,5},{10,12},{18,6},{2,4},{14,3}
+            {9, 8}, {1, 5}, {10, 12}, {18, 6}, {2, 4}, {14, 3}
 
         });
 
+        int[] ints = {3};
+        new ShellSort().shellSort(ints);
+
+        System.out.println(ints);
         ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
             Thread.currentThread().getContextClassLoader());
         Iterator<InputStream> iterator = inputStreams.iterator();
