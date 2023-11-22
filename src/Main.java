@@ -8,6 +8,7 @@ import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import leetcode.middle.MinPathCost_2304;
 
 
 public class Main {
@@ -22,10 +23,16 @@ public class Main {
     public static void main(String[] args) throws Exception {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
+        new MinPathCost_2304().minPathCost(new int[][]{{5, 3}, {4, 0}, {2, 1}}, new int[][]{
 
-        ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,Thread.currentThread().getContextClassLoader());
+            {9,8},{1,5},{10,12},{18,6},{2,4},{14,3}
+
+        });
+
+        ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
+            Thread.currentThread().getContextClassLoader());
         Iterator<InputStream> iterator = inputStreams.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             InputStream next = iterator.next();
             next.read();
         }
