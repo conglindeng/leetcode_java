@@ -1,9 +1,11 @@
 import essay.sort.ShellSort;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 import java.util.ServiceLoader;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -30,6 +32,10 @@ public class Main {
             {9, 8}, {1, 5}, {10, 12}, {18, 6}, {2, 4}, {14, 3}
 
         });
+
+        List<String> list = Arrays.asList(new String[]{"string", "sdfa"});
+        list.add("dsfsdf");
+
 
         new EntityParser_1410().entityParser("&&gt;");
 
