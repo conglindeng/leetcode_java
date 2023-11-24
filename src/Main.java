@@ -5,14 +5,12 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.List;
 import java.util.ServiceLoader;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import leetcode.middle.EntityParser_1410;
-import leetcode.middle.MinPathCost_2304;
+import leetcode.easy.CountPairs_2824;
 
 
 public class Main {
@@ -27,17 +25,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
-        new MinPathCost_2304().minPathCost(new int[][]{{5, 3}, {4, 0}, {2, 1}}, new int[][]{
 
-            {9, 8}, {1, 5}, {10, 12}, {18, 6}, {2, 4}, {14, 3}
-
-        });
-
-        List<String> list = Arrays.asList(new String[]{"string", "sdfa"});
-        list.add("dsfsdf");
-
-
-        new EntityParser_1410().entityParser("&&gt;");
+        new CountPairs_2824().countPairs(Arrays.asList(-1,1,2,3,1),2);
 
         int[] ints = {3};
         new ShellSort().shellSort(ints);
