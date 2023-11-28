@@ -26,7 +26,8 @@ public class Main {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
-        new CountPairs_2824().countPairs(Arrays.asList(-1,1,2,3,1),2);
+        CountPairs_2824 countPairs2824 = new CountPairs_2824();
+        countPairs2824.countPairs(Arrays.asList(-1, 1, 2, 3, 1), 2);
 
         int[] ints = {3};
         new ShellSort().shellSort(ints);

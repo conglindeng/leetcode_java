@@ -1,7 +1,5 @@
 package leetcode.easy;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.PriorityQueue;
 
 public class KthLargest_703 {
@@ -12,8 +10,7 @@ public class KthLargest_703 {
     public KthLargest_703(int k, int[] nums) {
         this.k=k;
         this.pq=new PriorityQueue<>();
-        for (int num :
-                nums) {
+        for (int num : nums) {
             pq.add(num);
         }
     }

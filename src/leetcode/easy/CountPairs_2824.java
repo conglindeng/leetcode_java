@@ -20,4 +20,8 @@ public class CountPairs_2824 {
         return res;
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
