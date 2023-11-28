@@ -11,6 +11,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.easy.CountPairs_2824;
+import leetcode.middle.FrontMiddleBackQueue_1670_Deque;
 
 
 public class Main {
@@ -31,6 +32,21 @@ public class Main {
 
         int[] ints = {3};
         new ShellSort().shellSort(ints);
+
+        FrontMiddleBackQueue_1670_Deque q = new FrontMiddleBackQueue_1670_Deque();
+        q.pushMiddle(3);   // [1]
+        q.pushFront(6);    // [1, 2]
+        q.pushMiddle(6);  // [1, 3, 2]
+        q.pushMiddle(3);  // [1, 4, 3, 2]
+        q.popMiddle();     // 返回 1 -> [4, 3, 2]
+        q.popMiddle();    // 返回 3 -> [4, 2]
+        q.popMiddle();    // 返回 4 -> [2]
+        q.popBack();      // 返回 2 -> []
+        q.popFront();     // 返回 -1 -> [] （队列为空）
+
+
+
+
 
         System.out.println(ints);
         ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
