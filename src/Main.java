@@ -1,4 +1,3 @@
-import essay.Search_33;
 import essay.sort.ShellSort;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -12,7 +11,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.easy.CountPairs_2824;
-import leetcode.middle.SmallestInfiniteSet_2336;
+import leetcode.easy.IsPalindrome_125;
 
 
 public class Main {
@@ -34,19 +33,7 @@ public class Main {
         int[] ints = {3};
         new ShellSort().shellSort(ints);
 
-        new Search_33().search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0);
-
-        SmallestInfiniteSet_2336 smallestInfiniteSet = new SmallestInfiniteSet_2336();
-        smallestInfiniteSet.addBack(2);    // 2 已经在集合中，所以不做任何变更。
-        smallestInfiniteSet.popSmallest(); // 返回 1 ，因为 1 是最小的整数，并将其从集合中移除。
-        smallestInfiniteSet.popSmallest(); // 返回 2 ，并将其从集合中移除。
-        smallestInfiniteSet.addBack(3);    // 将 1 添加到该集合中。
-        // 且 1 是最小的整数，并将其从集合中移除。
-        smallestInfiniteSet.popSmallest(); // 返回 4 ，并将其从集合中移除。
-        smallestInfiniteSet.addBack(2);    // 将 1 添加到该集合中。
-        smallestInfiniteSet.popSmallest(); // 返回 4 ，并将其从集合中移除。
-        smallestInfiniteSet.popSmallest(); // 返回 4 ，并将其从集合中移除。
-
+        new IsPalindrome_125().isPalindrome("A man, a plan, a canal: Panama");
 
         System.out.println(ints);
         ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
