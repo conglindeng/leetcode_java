@@ -24,6 +24,11 @@ public class Main {
     );
 
     public static void main(String[] args) throws Exception {
+        new Thread(() -> {
+            while (true) {
+
+            }
+        }).start();
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
