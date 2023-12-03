@@ -12,6 +12,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.easy.CountPairs_2824;
 import leetcode.easy.IsPalindrome_125;
+import leetcode.middle.CarPooling_1094;
+import leetcode.middle.MaxScore_1423;
 
 
 public class Main {
@@ -24,11 +26,6 @@ public class Main {
     );
 
     public static void main(String[] args) throws Exception {
-        new Thread(() -> {
-            while (true) {
-
-            }
-        }).start();
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
@@ -39,6 +36,15 @@ public class Main {
         new ShellSort().shellSort(ints);
 
         new IsPalindrome_125().isPalindrome("A man, a plan, a canal: Panama");
+
+        new CarPooling_1094().carPooling(new int[][]{
+
+            {10, 5, 7}, {10, 3, 4}, {7, 1, 8}, {6, 3, 4}
+        }, 23);
+
+
+
+        new MaxScore_1423().maxScore(new int[]{1, 2, 3, 4, 5, 6, 1}, 3);
 
         System.out.println(ints);
         ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
