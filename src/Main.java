@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import leetcode.easy.CountPairs_2824;
 import leetcode.easy.IsPalindrome_125;
 import leetcode.middle.CarPooling_1094;
+import leetcode.middle.CountCompleteSubstrings_100145;
 import leetcode.middle.MaxScore_1423;
 
 
@@ -42,7 +43,7 @@ public class Main {
             {10, 5, 7}, {10, 3, 4}, {7, 1, 8}, {6, 3, 4}
         }, 23);
 
-
+        new CountCompleteSubstrings_100145().countCompleteSubstrings("gvgvvgv",2);
 
         new MaxScore_1423().maxScore(new int[]{1, 2, 3, 4, 5, 6, 1}, 3);
 
