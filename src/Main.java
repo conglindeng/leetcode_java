@@ -15,6 +15,7 @@ import leetcode.easy.IsPalindrome_125;
 import leetcode.middle.CarPooling_1094;
 import leetcode.middle.CountCompleteSubstrings_100145;
 import leetcode.middle.MaxScore_1423;
+import leetcode.middle.NextBeautifulNumber_2048;
 
 
 public class Main {
@@ -33,6 +34,8 @@ public class Main {
         CountPairs_2824 countPairs2824 = new CountPairs_2824();
         countPairs2824.countPairs(Arrays.asList(-1, 1, 2, 3, 1), 2);
 
+        new NextBeautifulNumber_2048().nextBeautifulNumber(23);
+
         int[] ints = {3};
         new ShellSort().shellSort(ints);
 
@@ -43,7 +46,7 @@ public class Main {
             {10, 5, 7}, {10, 3, 4}, {7, 1, 8}, {6, 3, 4}
         }, 23);
 
-        new CountCompleteSubstrings_100145().countCompleteSubstrings("gvgvvgv",2);
+        new CountCompleteSubstrings_100145().countCompleteSubstrings("gvgvvgv", 2);
 
         new MaxScore_1423().maxScore(new int[]{1, 2, 3, 4, 5, 6, 1}, 3);
 
