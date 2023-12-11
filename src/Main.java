@@ -11,10 +11,10 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import leetcode.easy.CountPairs_2824;
-import leetcode.easy.IsPalindrome_125;
 import leetcode.middle.CarPooling_1094;
 import leetcode.middle.CountCompleteSubstrings_100145;
 import leetcode.middle.MaxScore_1423;
+import leetcode.middle.MinimumEffortPath_1631_UnionFind;
 import leetcode.middle.NextBeautifulNumber_2048;
 
 
@@ -39,7 +39,10 @@ public class Main {
         int[] ints = {3};
         new ShellSort().shellSort(ints);
 
-        new IsPalindrome_125().isPalindrome("A man, a plan, a canal: Panama");
+        new MinimumEffortPath_1631_UnionFind().minimumEffortPath(new int[][]{
+            {1, 3, 1, 1, 1},
+            {1, 1, 2, 3, 1}
+        });
 
         new CarPooling_1094().carPooling(new int[][]{
 
