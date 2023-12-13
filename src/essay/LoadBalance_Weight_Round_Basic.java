@@ -24,9 +24,7 @@ public class LoadBalance_Weight_Round_Basic {
                 nextList.add(key);
             }
         }
-        synchronized (lock) {
-            work = nextList;
-        }
+        work = nextList;
     }
 
     public String direct() {
