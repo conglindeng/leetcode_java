@@ -1,7 +1,5 @@
-import essay.sort.ShellSort;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
@@ -10,12 +8,6 @@ import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import leetcode.easy.CountPairs_2824;
-import leetcode.middle.CarPooling_1094;
-import leetcode.middle.CountCompleteSubstrings_100145;
-import leetcode.middle.MaxScore_1423;
-import leetcode.middle.MinimumEffortPath_1631_UnionFind;
-import leetcode.middle.NextBeautifulNumber_2048;
 
 
 public class Main {
@@ -31,29 +23,7 @@ public class Main {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
 
-        CountPairs_2824 countPairs2824 = new CountPairs_2824();
-        countPairs2824.countPairs(Arrays.asList(-1, 1, 2, 3, 1), 2);
 
-        new NextBeautifulNumber_2048().nextBeautifulNumber(23);
-
-        int[] ints = {3};
-        new ShellSort().shellSort(ints);
-
-        new MinimumEffortPath_1631_UnionFind().minimumEffortPath(new int[][]{
-            {1, 3, 1, 1, 1},
-            {1, 1, 2, 3, 1}
-        });
-
-        new CarPooling_1094().carPooling(new int[][]{
-
-            {10, 5, 7}, {10, 3, 4}, {7, 1, 8}, {6, 3, 4}
-        }, 23);
-
-        new CountCompleteSubstrings_100145().countCompleteSubstrings("gvgvvgv", 2);
-
-        new MaxScore_1423().maxScore(new int[]{1, 2, 3, 4, 5, 6, 1}, 3);
-
-        System.out.println(ints);
         ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
             Thread.currentThread().getContextClassLoader());
         Iterator<InputStream> iterator = inputStreams.iterator();
