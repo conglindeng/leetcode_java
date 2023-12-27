@@ -13,7 +13,7 @@ public class LimitingTest {
 
         SlidingWindow slidingWindow = new SlidingWindow(2000L, 10);
 
-        TokenBucket tokenBucket = new TokenBucket(10, 100L);
+        TokenBucket tokenBucket = new TokenBucket(100, 100L);
 
         int threadCount = 50;
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);

@@ -7,7 +7,9 @@ import java.util.ServiceLoader;
 import java.util.UUID;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
 import java.util.concurrent.TimeUnit;
+import leetcode.middle.MinimumPerimeter_1954;
 
 
 public class Main {
@@ -15,14 +17,18 @@ public class Main {
     private static final Object lock = new Object();
 
     private final static ThreadPoolExecutor executor = new ThreadPoolExecutor(
-        2, 20, 2, TimeUnit.SECONDS,
-        new LinkedBlockingDeque<>(3), r -> new Thread(r, "myPool")
+        2,
+        20,
+        2,
+        TimeUnit.SECONDS,
+        new LinkedBlockingDeque<>(3),
+        r -> new Thread(r, "myPool"),
+        new CallerRunsPolicy()
     );
 
     public static void main(String[] args) throws Exception {
         UUID uuid = UUID.randomUUID();
         System.out.println(uuid.toString().replace("-", ""));
-
 
         ServiceLoader<InputStream> inputStreams = ServiceLoader.load(InputStream.class,
             Thread.currentThread().getContextClassLoader());
@@ -31,6 +37,10 @@ public class Main {
             InputStream next = iterator.next();
             next.read();
         }
+
+        System.out.println(Integer.MAX_VALUE);
+
+        new MinimumPerimeter_1954().minimumPerimeter(1);
 
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
