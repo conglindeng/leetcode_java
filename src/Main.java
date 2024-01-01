@@ -1,3 +1,4 @@
+import competition.day23_12_31.maximumLength_100184;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -42,6 +43,8 @@ public class Main {
 
         new MinimumPerimeter_1954().minimumPerimeter(1);
 
+        new maximumLength_100184().maximumLength("abcaba");
+
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();
 //        skiplist_120.add(1);
@@ -55,6 +58,30 @@ public class Main {
 //        skiplist_120.erase(4);
 //
         //endregion
+    }
+
+    public int dayOfYear(String date) {
+        int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30};
+        String[] strs = date.split("-");
+        int year = Integer.parseInt(strs[0]);
+        int month = Integer.parseInt(strs[1]);
+        int day = Integer.parseInt(strs[2]);
+        int res = 0;
+        if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) && month > 2) {
+            res++;
+        }
+        for (int i = 1; i < month; i++) {
+            res += monthDays[i - 1];
+        }
+        return res + day;
+    }
+
+    public String dayOfTheWeek(int day, int month, int year) {
+        String[] m = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        Calendar instance = Calendar.getInstance();
+        instance.set(year, month, day);
+        int i = instance.get(Calendar.DAY_OF_WEEK);
+        return m[i];
     }
 
     private static void getDateAndPrint() {
