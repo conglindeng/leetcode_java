@@ -9,6 +9,8 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy;
 import java.util.concurrent.TimeUnit;
+import leetcode.middle.AddMinimum_2645;
+import leetcode.middle.MinExtraChar_2707;
 import leetcode.middle.MinOperationsMaxProfit_1599;
 import leetcode.middle.MinimumPerimeter_1954;
 
@@ -44,6 +46,10 @@ public class Main {
         new MinimumPerimeter_1954().minimumPerimeter(1);
 
         new MinOperationsMaxProfit_1599().minOperationsMaxProfit(new int[]{2}, 2, 4);
+
+        new MinExtraChar_2707().minExtraChar("leetscode", new String[]{"leet", "code", "leetcode"});
+
+        new AddMinimum_2645().addMinimum_groupCont("aaaabb");
 
         //region todo
 //        Skiplist_120 skiplist_120 = new Skiplist_120();

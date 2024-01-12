@@ -34,7 +34,6 @@ public class InsertGreatestCommonDivisors_2807 {
         return 1;
     }
 
-
     private int findMaxCommonDivisor_optimize(int m, int n) {
         while (n != 0) {
             int temp = m % n;
