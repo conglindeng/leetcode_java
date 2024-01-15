@@ -3,8 +3,9 @@ package leetcode.easy;
 import struct.ListNode;
 
 public class DeleteDuplicates_83 {
+
     public ListNode deleteDuplicates(ListNode head) {
-        if(head==null||head.next==null){
+        if (head == null || head.next == null) {
             return head;
         }
         //ListNode mockHead=new ListNode(-1,head);
@@ -15,7 +16,7 @@ public class DeleteDuplicates_83 {
             next = cur.next;
             if (next.val == cur.val) {
                 deleteCurOrNextNode(cur, next);
-            }  else {
+            } else {
                 cur = next;
                 next = null;
             }
@@ -24,10 +25,10 @@ public class DeleteDuplicates_83 {
     }
 
     private void deleteCurOrNextNode(ListNode pre, ListNode curOrNext) {
-        if(curOrNext.next==null){
-            pre.next=null;
-        }else{
-            pre.next=curOrNext.next;
+        if (curOrNext.next == null) {
+            pre.next = null;
+        } else {
+            pre.next = curOrNext.next;
         }
     }
 

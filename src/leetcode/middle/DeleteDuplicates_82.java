@@ -45,4 +45,26 @@ public class DeleteDuplicates_82 {
 //    private void deleteCurAndNextNode(ListNode pre, ListNode cur, ListNode next) {
 //
 //    }
+
+    public ListNode deleteDuplicates_new(ListNode head) {
+        ListNode mockedHead = new ListNode(-200, head);
+        ListNode cur = mockedHead;
+        while (true) {
+            ListNode next = cur.next;
+            if (next == null) {
+                break;
+            }
+            boolean equal = false;
+            while (next.next != null && next.val == next.next.val) {
+                equal = true;
+                next = next.next;
+            }
+            if (equal) {
+                cur.next = next.next;
+            } else {
+                cur = next;
+            }
+        }
+        return mockedHead.next;
+    }
 }
